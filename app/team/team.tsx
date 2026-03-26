@@ -2,6 +2,8 @@ import React from "react";
 
 import { FaArrowRight, FaLinkedin, FaTwitter } from "react-icons/fa";
 
+import { useNavigate } from "react-router";
+
 import data from "../../lib/data.json";
 
 const teamData = (data as TeamData).team;
@@ -11,6 +13,13 @@ const LEADERS = teamData.leaders;
 const SPECIALISTS = teamData.specialists;
 
 export default function Team() {
+  const navigate = useNavigate();
+
+  const goToMember = (slug?: string) => {
+    if (!slug) return;
+    navigate(`/team/${slug}`);
+  };
+
   return (
     <main
       style={{ viewTransitionName: "main-content" } as React.CSSProperties}
@@ -24,7 +33,7 @@ export default function Team() {
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500 rounded-full blur-[120px] -mr-48 -mt-48" />
         </div>
 
-        <div className="max-w-full-sm xl:container mx-auto px-6 relative z-10 text-center">
+        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <span className="text-blue-400 font-bold uppercase tracking-widest text-sm mb-4 block">
             Our People
           </span>
@@ -75,7 +84,16 @@ export default function Team() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
             {LEADERS.map((leader, idx) => (
-              <div key={leader.name} className="group cursor-pointer">
+              <div
+                key={leader.name}
+                className="group cursor-pointer"
+                role="button"
+                tabIndex={0}
+                onClick={() => navigate(`/team/${leader.slug}`)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") navigate(`/team/${leader.slug}`);
+                }}
+              >
                 <div className="relative aspect-4/5 rounded-3xl overflow-hidden mb-6 bg-slate-100">
                   <img
                     src={leader.imageSrc}
@@ -93,6 +111,10 @@ export default function Team() {
                           id={`member-${idx + 1}-li-icon`}
                           className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-blue-600 transition-all"
                           aria-label={`LinkedIn for ${leader.name}`}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                          }}
                         >
                           <FaLinkedin className="w-5 h-5 text-white" />
                         </a>
@@ -101,6 +123,10 @@ export default function Team() {
                           id={`member-${idx + 1}-tw-icon`}
                           className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-blue-400 transition-all"
                           aria-label={`Twitter for ${leader.name}`}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                          }}
                         >
                           <FaTwitter className="w-5 h-5 text-white" />
                         </a>
@@ -146,7 +172,13 @@ export default function Team() {
             {SPECIALISTS.map((s) => (
               <div
                 key={s.name}
-                className="bg-white p-6 rounded-4xl border border-slate-200 shadow-sm hover:shadow-md transition-all group"
+                className="bg-white p-6 rounded-4xl border border-slate-200 shadow-sm hover:shadow-md transition-all group cursor-pointer"
+                role="button"
+                tabIndex={0}
+                onClick={() => goToMember(s.slug)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") goToMember(s.slug);
+                }}
               >
                 <div className="aspect-square rounded-2xl overflow-hidden mb-6 bg-slate-100 grayscale hover:grayscale-0 transition-all duration-500">
                   <img

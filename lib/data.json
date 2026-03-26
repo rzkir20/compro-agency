@@ -83,121 +83,1449 @@
     "leaders": [
       {
         "name": "Dr. Elena Vance",
+        "slug": "dr-elena-vance",
         "role": "Managing Director, Strategy",
         "imageSrc": "https://i.pravatar.cc/800?u=a1",
         "imageAlt": "Dr. Elena Vance",
         "overlayText": "Expert in multi-market scaling and M&A integration with 20+ years of tenure.",
-        "badges": ["PhD Economics", "Former BCG Partner"]
+        "badges": ["PhD Economics", "Former BCG Partner"],
+        "profileDetails": {
+          "heroChip": "Strategic Leadership",
+          "heroTitle": "Dr. Elena Vance",
+          "heroSubtitle": "Managing Director of Strategy",
+          "shortBio": "Dr. Vance is a world-renowned strategist with a focus on institutional transformation and global market acceleration. She leads Nexus's strategy practice, helping Fortune 100 CEOs navigate high-stakes competitive landscapes.",
+          "socialLinks": {
+            "linkedinHref": "#",
+            "twitterHref": "#"
+          },
+          "scheduleHref": "#",
+          "scheduleLabel": "Schedule a Strategy Session",
+          "biography": [
+            "With over two decades of experience in management consulting, Dr. Elena Vance has built a reputation for her surgical precision in diagnosing organizational inefficiency and architecting sustainable growth models. Before joining Nexus as a founding partner, she served as a Senior Partner at BCG, where she spearheaded the Global Financial Institutions practice.",
+            "Her methodology combines the rigor of classical economic theory with the agility required by the modern digital economy. She has personally overseen over 150 large-scale transformations, totaling more than $12B in optimized capital allocation for her clients."
+          ],
+          "expertise": [
+            { "title": "Market Expansion Strategy", "percent": 98 },
+            { "title": "M&A Post-Merger Integration", "percent": 95 },
+            { "title": "Institutional Capital Allocation", "percent": 92 },
+            { "title": "Executive Alignment & Coaching", "percent": 96 },
+            { "title": "Global Supply Chain Resilience", "percent": 88 },
+            { "title": "Economic Policy Simulation", "percent": 94 }
+          ],
+          "careerJourney": [
+            {
+              "period": "2018 — Present",
+              "title": "Nexus Strategic Consulting",
+              "role": "Managing Director, Strategy Partner",
+              "description": "Founding partner responsible for the global strategy practice and Fortune 500 client relations."
+            },
+            {
+              "period": "2010 — 2018",
+              "title": "Boston Consulting Group (BCG)",
+              "role": "Senior Partner & Managing Director",
+              "description": "Led the North American Financial Institutions group, managing a portfolio of $200M+ annually."
+            },
+            {
+              "period": "2004 — 2010",
+              "title": "McKinsey & Company",
+              "role": "Associate Principal",
+              "description": "Focused on operational restructuring and post-merger integration for global manufacturing firms."
+            }
+          ],
+          "academicFoundations": [
+            { "title": "PhD in Economics", "subtitle": "Stanford University", "icon": "graduation-cap" },
+            { "title": "MBA Strategy", "subtitle": "Harvard Business School", "icon": "book-open" },
+            { "title": "BA Philosophy", "subtitle": "Princeton University", "icon": "landmark" }
+          ],
+          "notableImpact": [
+            {
+              "category": "Retail Banking",
+              "title": "+35% Digital Adoption Rate",
+              "description": "Led the strategic UX overhaul for Europe's largest retail bank."
+            },
+            {
+              "category": "Tech Unicorn",
+              "title": "15 Markets in 24 Months",
+              "description": "Designed the global expansion roadmap for a $10B SaaS leader."
+            },
+            {
+              "category": "Manufacturing",
+              "title": "$450M Operational Alpha",
+              "description": "Architected the post-merger supply chain integration for Global Industrials."
+            }
+          ],
+          "directContact": {
+            "email": "e.vance@nexus-strategy.com",
+            "phone": "+1 (212) 555-8822",
+            "location": "New York HQ, Suite 1200"
+          },
+          "clientVoice": [
+            {
+              "quote": "Elena has a unique ability to find the 'signal in the noise'. During our merger, her strategic alignment workshops were the single most effective intervention for our executive team. She is peerless in her field.",
+              "name": "James Miller",
+              "role": "CEO, Apex Industrial Group",
+              "imageSrc": "https://i.pravatar.cc/100?u=exec1"
+            },
+            {
+              "quote": "I've worked with the best consultants at every major firm, but Dr. Vance brings a different level of accountability. She doesn't just deliver a deck; she ensures the strategy is actually executed. The results speak for themselves.",
+              "name": "Sarah Chen",
+              "role": "CFO, OmniRetail Global",
+              "imageSrc": "https://i.pravatar.cc/100?u=exec2"
+            }
+          ],
+          "bottomCta": {
+            "title": "Work with Dr. Vance on your next strategic project.",
+            "description": "Dr. Vance accepts a limited number of high-impact advisory engagements each year. Schedule a confidential discovery session to discuss your organizational goals.",
+            "href": "#",
+            "buttonLabel": "Book Strategy Workshop"
+          }
+        }
       },
       {
         "name": "Marcus Thorne",
+        "slug": "marcus-thorne",
         "role": "Head of Digital Advisory",
         "imageSrc": "https://i.pravatar.cc/800?u=a2",
         "imageAlt": "Marcus Thorne",
         "overlayText": "Digital pioneer focusing on AI implementation and cloud-native operational models.",
-        "badges": ["MIT Alumni", "Tech Innovator"]
+        "badges": ["MIT Alumni", "Tech Innovator"],
+        "profileDetails": {
+          "heroChip": "Digital Advisory",
+          "heroTitle": "Marcus Thorne",
+          "heroSubtitle": "Head of Digital Advisory",
+          "shortBio": "Marcus helps leadership teams turn AI and cloud-native capabilities into operational outcomes. He partners with executives to design systems that scale safely, measure impact, and stay adaptable to change.",
+          "socialLinks": {
+            "linkedinHref": "#",
+            "twitterHref": "#"
+          },
+          "scheduleHref": "#",
+          "scheduleLabel": "Schedule a Digital Workshop",
+          "biography": [
+            "Marcus has led digital transformation programs across regulated and high-scale environments, with a focus on AI enablement, data governance, and resilient cloud operations.",
+            "His approach connects technical architecture to measurable KPIs, ensuring teams can deploy quickly while maintaining reliability, security, and accountability."
+          ],
+          "expertise": [
+            { "title": "AI Implementation & Enablement", "percent": 96 },
+            { "title": "Cloud-Native Operations", "percent": 92 },
+            { "title": "Data Governance & Risk Controls", "percent": 89 }
+          ],
+          "careerJourney": [
+            {
+              "period": "2019 — Present",
+              "title": "Nexus Digital Advisory",
+              "role": "Head of Digital Advisory",
+              "description": "Leads AI and cloud-native advisory engagements for executive teams, aligning architecture with operational metrics."
+            },
+            {
+              "period": "2012 — 2019",
+              "title": "Cloud Systems Group",
+              "role": "Director, Platform Engineering",
+              "description": "Built multi-region cloud platforms and standardized operating models for global organizations."
+            },
+            {
+              "period": "2007 — 2012",
+              "title": "Tech Research Labs",
+              "role": "Applied AI Engineer",
+              "description": "Developed prototypes and productionized AI workflows focused on governance and human-in-the-loop design."
+            }
+          ],
+          "academicFoundations": [
+            { "title": "PhD in Computer Science", "subtitle": "MIT", "icon": "graduation-cap" },
+            { "title": "MS in Systems Engineering", "subtitle": "Stanford University", "icon": "book-open" },
+            { "title": "BS in Information Systems", "subtitle": "Carnegie Mellon", "icon": "landmark" }
+          ],
+          "notableImpact": [
+            {
+              "category": "AI Deployment",
+              "title": "+48% Decision Velocity",
+              "description": "Replaced manual analytics with governed AI workflows and real-time reporting dashboards."
+            },
+            {
+              "category": "Cloud Resilience",
+              "title": "-62% Operational Incidents",
+              "description": "Introduced standardized runbooks, observability, and incident governance for multi-team operations."
+            }
+          ],
+          "directContact": {
+            "email": "m.thorne@nexus-digital.com",
+            "phone": "+1 (212) 555-1102",
+            "location": "London HQ, Suite 710"
+          },
+          "clientVoice": [
+            {
+              "quote": "Marcus made AI feel actionable. The governance model and metrics dashboard helped our exec team trust deployments and scale them responsibly.",
+              "name": "Oliver Grant",
+              "role": "COO, Global FinTech",
+              "imageSrc": "https://i.pravatar.cc/100?u=exec3"
+            },
+            {
+              "quote": "We didn’t just migrate systems; we improved how decisions are made. The new operating model reduced incidents and accelerated releases.",
+              "name": "Priya Nair",
+              "role": "VP Operations, Enterprise SaaS",
+              "imageSrc": "https://i.pravatar.cc/100?u=exec4"
+            }
+          ],
+          "bottomCta": {
+            "title": "Work with Marcus on your next AI program.",
+            "description": "Marcus accepts a limited number of advisory engagements focused on AI enablement and cloud-native operating models. Book a confidential workshop to align on outcomes and governance.",
+            "href": "#",
+            "buttonLabel": "Book a Digital Workshop"
+          }
+        }
       },
       {
         "name": "Sarah Jenkins",
+        "slug": "sarah-jenkins",
         "role": "Financial Risk Partner",
         "imageSrc": "https://i.pravatar.cc/800?u=a3",
         "imageAlt": "Sarah Jenkins",
         "overlayText": "Architect of complex financial risk models for Fortune 100 industrial firms.",
-        "badges": ["Wharton MBA", "CFA Charterholder"]
+        "badges": ["Wharton MBA", "CFA Charterholder"],
+        "profileDetails": {
+          "heroChip": "Financial Risk",
+          "heroTitle": "Sarah Jenkins",
+          "heroSubtitle": "Financial Risk Partner",
+          "shortBio": "Sarah designs financial risk frameworks that executives can govern and teams can operationalize. Her work connects modeling quality with decision speed, compliance, and measurable risk reduction.",
+          "socialLinks": {
+            "linkedinHref": "#",
+            "twitterHref": "#"
+          },
+          "scheduleHref": "#",
+          "scheduleLabel": "Schedule a Risk Advisory Session",
+          "biography": [
+            "Sarah has built and validated risk models for complex capital structures, helping organizations quantify exposure and strengthen oversight.",
+            "She specializes in translating model outputs into governance workflows and stakeholder-ready decision narratives."
+          ],
+          "expertise": [
+            { "title": "Risk Modeling & Validation", "percent": 94 },
+            { "title": "Capital Structure Strategy", "percent": 90 },
+            { "title": "Governance & Compliance Frameworks", "percent": 93 }
+          ],
+          "careerJourney": [
+            {
+              "period": "2018 — Present",
+              "title": "Nexus Risk Advisory",
+              "role": "Financial Risk Partner",
+              "description": "Leads risk advisory engagements for executive teams and board stakeholders, aligning models with governance outcomes."
+            },
+            {
+              "period": "2011 — 2018",
+              "title": "Global Markets Consulting",
+              "role": "Senior Manager, Risk Analytics",
+              "description": "Architected risk measurement approaches and reporting pipelines for multinational enterprises."
+            },
+            {
+              "period": "2006 — 2011",
+              "title": "Investment Analytics",
+              "role": "Quant Analyst",
+              "description": "Developed forecasting models and performed validation across credit and liquidity use cases."
+            }
+          ],
+          "academicFoundations": [
+            { "title": "MBA Finance", "subtitle": "Wharton Business School", "icon": "book-open" },
+            { "title": "CFA Charterholder", "subtitle": "CFA Institute", "icon": "graduation-cap" },
+            { "title": "Advanced Risk Studies", "subtitle": "London School of Economics", "icon": "landmark" }
+          ],
+          "notableImpact": [
+            {
+              "category": "Risk Reduction",
+              "title": "-28% Volatility Exposure",
+              "description": "Implemented model-driven limits and governance reviews that reduced unpredictable variance."
+            },
+            {
+              "category": "Decision Governance",
+              "title": "+35% Faster Approvals",
+              "description": "Streamlined risk reporting into stakeholder-ready formats, improving decision cadence."
+            }
+          ],
+          "directContact": {
+            "email": "s.jenkins@nexus-risk.com",
+            "phone": "+1 (212) 555-3344",
+            "location": "New York HQ, Suite 900"
+          },
+          "clientVoice": [
+            {
+              "quote": "Sarah’s framework gave our leadership clear accountability. We could explain the model, govern it, and act faster when conditions changed.",
+              "name": "Amir Khoury",
+              "role": "CFO, Global Industrial Group",
+              "imageSrc": "https://i.pravatar.cc/100?u=exec5"
+            }
+          ],
+          "bottomCta": {
+            "title": "Work with Sarah on risk you can govern.",
+            "description": "Book a confidential discovery session to align on your risk objectives, governance needs, and decision workflows.",
+            "href": "#",
+            "buttonLabel": "Book a Risk Advisory Session"
+          }
+        }
       }
     ],
     "specialists": [
       {
         "name": "David Chen",
+        "slug": "david-chen",
         "role": "Sustainability Lead",
         "imageSrc": "https://i.pravatar.cc/400?u=a4",
         "imageAlt": "David Chen",
         "tags": [
           { "label": "ESG", "bgTextClassName": "bg-emerald-50 text-emerald-600" },
           { "label": "Circular Econ", "bgTextClassName": "bg-emerald-50 text-emerald-600" }
-        ]
+        ],
+        "profileDetails": {
+          "heroChip": "Sustainability",
+          "heroTitle": "David Chen",
+          "heroSubtitle": "Sustainability Lead",
+          "shortBio": "David helps organizations operationalize ESG strategy into measurable programs. He connects data, governance, and execution so sustainability becomes an everyday performance capability.",
+          "socialLinks": {
+            "linkedinHref": "#",
+            "twitterHref": "#"
+          },
+          "scheduleHref": "#",
+          "scheduleLabel": "Schedule a Sustainability Deep-Dive",
+          "biography": [
+            "David has advised executive teams on practical ESG roadmaps, from targets and metrics to governance and reporting rhythms.",
+            "His work focuses on turning sustainability goals into operating models that teams can run, audit, and improve."
+          ],
+          "expertise": [
+            { "title": "ESG Operating Models", "percent": 95 },
+            { "title": "Carbon & Circular Programs", "percent": 91 },
+            { "title": "Reporting Governance & Assurance", "percent": 88 }
+          ],
+          "careerJourney": [
+            {
+              "period": "2018 — Present",
+              "title": "Nexus Sustainability",
+              "role": "Sustainability Lead",
+              "description": "Leads ESG advisory engagements and builds measurable program roadmaps."
+            },
+            {
+              "period": "2012 — 2018",
+              "title": "Impact Consulting Group",
+              "role": "Director, Sustainability Advisory",
+              "description": "Developed carbon, circular, and governance frameworks for global enterprises."
+            },
+            {
+              "period": "2007 — 2012",
+              "title": "Environmental Analytics Labs",
+              "role": "Senior Analyst",
+              "description": "Built measurement approaches for emissions, waste, and sustainable sourcing initiatives."
+            }
+          ],
+          "academicFoundations": [
+            { "title": "MS Environmental Policy", "subtitle": "Oxford University", "icon": "book-open" },
+            { "title": "PhD in Sustainability Science", "subtitle": "Imperial College", "icon": "graduation-cap" },
+            { "title": "BA Economics", "subtitle": "University of Toronto", "icon": "landmark" }
+          ],
+          "notableImpact": [
+            {
+              "category": "ESG Execution",
+              "title": "+29% Program Adoption",
+              "description": "Built governance and reporting rhythms that increased adoption across business units."
+            },
+            {
+              "category": "Operational Carbon",
+              "title": "-18% Emissions Intensity",
+              "description": "Introduced measurement and improvement loops tied to daily operational decisions."
+            }
+          ],
+          "directContact": {
+            "email": "d.chen@nexus-sustain.com",
+            "phone": "+1 (212) 555-2233",
+            "location": "Singapore HQ, Suite 310"
+          },
+          "clientVoice": [
+            {
+              "quote": "David’s approach made ESG tangible. Our teams finally had a system for metrics, governance, and follow-through—not just targets.",
+              "name": "Elena Rodriguez",
+              "role": "VP Sustainability, Global Manufacturing",
+              "imageSrc": "https://i.pravatar.cc/100?u=exec6"
+            }
+          ],
+          "bottomCta": {
+            "title": "Work with David on your ESG execution system.",
+            "description": "Book a confidential session to align on measurable ESG outcomes, governance, and operational adoption across teams.",
+            "href": "#",
+            "buttonLabel": "Book a Sustainability Workshop"
+          }
+        }
       },
       {
         "name": "Amara Okafor",
+        "slug": "amara-okafor",
         "role": "Talent Strategy",
         "imageSrc": "https://i.pravatar.cc/400?u=a5",
         "imageAlt": "Amara Okafor",
         "tags": [
           { "label": "Culture", "bgTextClassName": "bg-blue-50 text-blue-600" },
           { "label": "Leadership", "bgTextClassName": "bg-blue-50 text-blue-600" }
-        ]
+        ],
+        "profileDetails": {
+          "heroChip": "Talent Strategy",
+          "heroTitle": "Amara Okafor",
+          "heroSubtitle": "Talent Strategy",
+          "shortBio": "Amara designs leadership and talent systems that help organizations grow sustainably. She aligns culture, performance, and learning programs to business outcomes.",
+          "socialLinks": {
+            "linkedinHref": "#",
+            "twitterHref": "#"
+          },
+          "scheduleHref": "#",
+          "scheduleLabel": "Schedule a Leadership & Culture Session",
+          "biography": [
+            "Amara partners with executives to translate strategy into leadership capabilities, role clarity, and measurable performance routines.",
+            "Her work strengthens culture by making coaching, feedback, and development operational for managers."
+          ],
+          "expertise": [
+            { "title": "Leadership Capability Design", "percent": 93 },
+            { "title": "Culture & Performance Systems", "percent": 90 },
+            { "title": "Talent Operating Model & Governance", "percent": 87 }
+          ],
+          "careerJourney": [
+            {
+              "period": "2018 — Present",
+              "title": "Nexus Talent Strategy",
+              "role": "Talent Strategy Advisor",
+              "description": "Leads engagements on leadership systems, culture, and performance operating models."
+            },
+            {
+              "period": "2013 — 2018",
+              "title": "People & Performance Advisory",
+              "role": "Senior Consultant",
+              "description": "Built talent frameworks and manager enablement programs for scaling organizations."
+            },
+            {
+              "period": "2008 — 2013",
+              "title": "Learning & Organizational Development",
+              "role": "Program Lead",
+              "description": "Designed coaching curricula and leadership development pathways."
+            }
+          ],
+          "academicFoundations": [
+            { "title": "MBA Organizational Leadership", "subtitle": "INSEAD", "icon": "book-open" },
+            { "title": "MA Psychology", "subtitle": "University of Chicago", "icon": "graduation-cap" },
+            { "title": "BSc Business Administration", "subtitle": "NUS", "icon": "landmark" }
+          ],
+          "notableImpact": [
+            {
+              "category": "Leadership Effectiveness",
+              "title": "+31% Manager Readiness",
+              "description": "Implemented enablement and coaching systems that improved manager capability and confidence."
+            },
+            {
+              "category": "Culture Alignment",
+              "title": "Faster Onboarding to Performance",
+              "description": "Aligned role clarity and development rhythms to reduce time-to-productivity for new leaders."
+            }
+          ],
+          "directContact": {
+            "email": "a.okafor@nexus-talent.com",
+            "phone": "+1 (212) 555-7711",
+            "location": "Berlin HQ, Suite 120"
+          },
+          "clientVoice": [
+            {
+              "quote": "Amara helped us operationalize culture. We now have a system for how leaders coach, measure progress, and improve—week over week.",
+              "name": "Sofia Almeida",
+              "role": "Chief People Officer, Global Retail Group",
+              "imageSrc": "https://i.pravatar.cc/100?u=exec7"
+            },
+            {
+              "quote": "Instead of generic programs, the leadership framework became part of our execution cadence. That’s why it stuck.",
+              "name": "Daniel Kim",
+              "role": "VP Strategy, Mid-Market Growth Firm",
+              "imageSrc": "https://i.pravatar.cc/100?u=exec8"
+            }
+          ],
+          "bottomCta": {
+            "title": "Work with Amara on leadership systems.",
+            "description": "Book a confidential discovery session to align culture, performance routines, and leadership capability with your business outcomes.",
+            "href": "#",
+            "buttonLabel": "Book a Talent Workshop"
+          }
+        }
       },
       {
         "name": "Julian Voss",
+        "slug": "julian-voss",
         "role": "Supply Chain Advisor",
         "imageSrc": "https://i.pravatar.cc/400?u=a6",
         "imageAlt": "Julian Voss",
         "tags": [
           { "label": "Lean", "bgTextClassName": "bg-blue-50 text-blue-600" },
           { "label": "Logistics", "bgTextClassName": "bg-blue-50 text-blue-600" }
-        ]
+        ],
+        "profileDetails": {
+          "heroChip": "Supply Chain",
+          "heroTitle": "Julian Voss",
+          "heroSubtitle": "Supply Chain Advisor",
+          "shortBio": "Julian helps organizations improve supply chain velocity and resilience using lean principles and data-driven planning. He focuses on execution systems that teams can run daily.",
+          "socialLinks": {
+            "linkedinHref": "#",
+            "twitterHref": "#"
+          },
+          "scheduleHref": "#",
+          "scheduleLabel": "Schedule a Supply Chain Planning Session",
+          "biography": [
+            "Julian has led operational excellence programs that reduce waste, improve logistics performance, and strengthen cross-site coordination.",
+            "His work connects process design with measurable service levels and operational KPIs."
+          ],
+          "expertise": [
+            { "title": "Lean Process Design", "percent": 94 },
+            { "title": "Logistics Optimization", "percent": 91 },
+            { "title": "Resilience & Risk Controls", "percent": 88 }
+          ],
+          "careerJourney": [
+            {
+              "period": "2019 — Present",
+              "title": "Nexus Operations Excellence",
+              "role": "Supply Chain Advisor",
+              "description": "Advises on lean transformations, planning systems, and logistics performance improvement."
+            },
+            {
+              "period": "2014 — 2019",
+              "title": "Global Operations Group",
+              "role": "Senior Operations Manager",
+              "description": "Standardized operating models and improved service levels across regional supply chains."
+            },
+            {
+              "period": "2008 — 2014",
+              "title": "Industrial Engineering Consulting",
+              "role": "Operations Analyst",
+              "description": "Designed process improvements and modeling approaches for planning and execution."
+            }
+          ],
+          "academicFoundations": [
+            { "title": "PhD in Operations Research", "subtitle": "ETH Zurich", "icon": "graduation-cap" },
+            { "title": "MS Supply Chain Systems", "subtitle": "Georgia Tech", "icon": "book-open" },
+            { "title": "BA Industrial Engineering", "subtitle": "TU Munich", "icon": "landmark" }
+          ],
+          "notableImpact": [
+            {
+              "category": "Operational Velocity",
+              "title": "+22% Lead-Time Improvement",
+              "description": "Re-designed planning workflows and eliminated waste in cross-site handoffs."
+            },
+            {
+              "category": "Resilience",
+              "title": "-19% Disruption Impact",
+              "description": "Implemented risk controls and scenario planning for key logistics constraints."
+            }
+          ],
+          "directContact": {
+            "email": "j.voss@nexus-supply.com",
+            "phone": "+1 (212) 555-4455",
+            "location": "Dubai HQ, Suite 402"
+          },
+          "clientVoice": [
+            {
+              "quote": "Julian brought clarity to messy operations. The lean system made improvements repeatable and measurable for every site.",
+              "name": "Aisha Rahman",
+              "role": "Director, Logistics Operations",
+              "imageSrc": "https://i.pravatar.cc/100?u=exec9"
+            }
+          ],
+          "bottomCta": {
+            "title": "Work with Julian on supply chain execution.",
+            "description": "Book a confidential session to align on lean improvements, logistics KPIs, and resilience practices you can run daily.",
+            "href": "#",
+            "buttonLabel": "Book a Supply Chain Workshop"
+          }
+        }
       },
       {
         "name": "Sofia Martinez",
+        "slug": "sofia-martinez",
         "role": "Customer Experience",
         "imageSrc": "https://i.pravatar.cc/400?u=a7",
         "imageAlt": "Sofia Martinez",
         "tags": [
           { "label": "UX Design", "bgTextClassName": "bg-blue-50 text-blue-600" },
           { "label": "Brand", "bgTextClassName": "bg-blue-50 text-blue-600" }
-        ]
+        ],
+        "profileDetails": {
+          "heroChip": "Customer Experience",
+          "heroTitle": "Sofia Martinez",
+          "heroSubtitle": "Customer Experience",
+          "shortBio": "Sofia designs customer experience systems that connect UX, brand, and measurable outcomes. She helps organizations create experiences users trust and teams can continuously improve.",
+          "socialLinks": {
+            "linkedinHref": "#",
+            "twitterHref": "#"
+          },
+          "scheduleHref": "#",
+          "scheduleLabel": "Schedule a CX & UX Session",
+          "biography": [
+            "Sofia partners with leadership teams to turn experience strategy into execution-ready journeys and design systems.",
+            "Her expertise blends research, product design, and performance measurement to create fast, reliable customer value."
+          ],
+          "expertise": [
+            { "title": "UX Strategy & Journey Design", "percent": 96 },
+            { "title": "Design Systems & Brand Consistency", "percent": 92 },
+            { "title": "Experimentation & Conversion Optimization", "percent": 89 }
+          ],
+          "careerJourney": [
+            {
+              "period": "2018 — Present",
+              "title": "Nexus Experience Design",
+              "role": "Customer Experience Lead",
+              "description": "Leads UX transformations that improve onboarding, engagement, and measurable customer outcomes."
+            },
+            {
+              "period": "2013 — 2018",
+              "title": "Product Experience Studio",
+              "role": "Senior Product Designer",
+              "description": "Built design systems and ran experiments to improve conversion and retention."
+            },
+            {
+              "period": "2008 — 2013",
+              "title": "Brand & Digital Labs",
+              "role": "UX Researcher",
+              "description": "Conducted research and designed experience prototypes for multi-channel products."
+            }
+          ],
+          "academicFoundations": [
+            { "title": "MS Human-Computer Interaction", "subtitle": "Carnegie Mellon", "icon": "graduation-cap" },
+            { "title": "MA Communication Design", "subtitle": "UCL", "icon": "book-open" },
+            { "title": "BA Psychology", "subtitle": "University of Barcelona", "icon": "landmark" }
+          ],
+          "notableImpact": [
+            {
+              "category": "Conversion & Trust",
+              "title": "+41% Onboarding Completion",
+              "description": "Redesigned onboarding journeys and introduced performance instrumentation for rapid iteration."
+            },
+            {
+              "category": "Design Consistency",
+              "title": "-33% UI Fragmentation",
+              "description": "Implemented design systems that improved brand consistency across product lines."
+            }
+          ],
+          "directContact": {
+            "email": "s.martinez@nexus-cx.com",
+            "phone": "+1 (212) 555-8899",
+            "location": "New York HQ, Suite 240"
+          },
+          "clientVoice": [
+            {
+              "quote": "Sofia gave us clarity on what to change first. The redesigned journey improved conversion immediately, and the system keeps improving.",
+              "name": "Marcus Patel",
+              "role": "VP Product, Consumer Platform",
+              "imageSrc": "https://i.pravatar.cc/100?u=exec10"
+            },
+            {
+              "quote": "The combination of brand thinking and UX rigor made the experience feel trustworthy. Our teams finally had a repeatable process.",
+              "name": "Nina Alvarez",
+              "role": "CMO, Global Retail Brand",
+              "imageSrc": "https://i.pravatar.cc/100?u=exec11"
+            }
+          ],
+          "bottomCta": {
+            "title": "Work with Sofia on your next CX system.",
+            "description": "Book a confidential discovery session to align on UX strategy, brand consistency, and measurable experience outcomes.",
+            "href": "#",
+            "buttonLabel": "Book a CX Workshop"
+          }
+        }
       }
     ]
   },
   "portfolio": {
     "caseStudies": [
       {
-        "industry": "Fintech",
-        "outcomeLabel": "+35% Adoption",
-        "title": "Digital Banking Reimagined",
-        "description": "A major European bank overhauled its UX strategy, resulting in record-breaking engagement and 35% growth in digital services.",
+        "industry": "Retail",
+        "slug": "reimagining-retail-banking",
+        "outcomeLabel": "+35% Digital Adoption",
+        "title": "Reimagining Retail Banking",
+        "description": "A 35% increase in digital adoption for a leading European bank through strategic UX overhaul.",
         "imageSrc": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
-        "imageAlt": "Banking Transformation"
+        "imageAlt": "Retail Banking Transformation",
+        "details": {
+          "breadcrumbLabel": "Retail Banking Transformation",
+          "categoryLabel": "Digital Transformation & UX",
+          "pageTitle": "Reimagining Retail Banking for the Next Generation.",
+          "engagementBadges": [
+            { "text": "14 Months Engagement" },
+            { "text": "Global European Bank" },
+            { "text": "FastCompany Design Award 2023" }
+          ],
+          "challenge": {
+            "title": "Legacy Barriers to Growth",
+            "description": "Our client, a top-tier European bank, was losing significant market share to agile fintech startups. Their mobile app had a 2.1-star rating, and digital customer onboarding took upwards of 5 days, leading to a 60% abandonment rate.",
+            "bullets": [
+              "Declining NPS scores among customers aged 18-35.",
+              "High operational costs due to branch-heavy processing.",
+              "Technical debt preventing rapid feature deployment."
+            ]
+          },
+          "solution": {
+            "title": "A Radical UX Pivot",
+            "description": "Nexus implemented a \"Design-Led Transformation\" framework. We bypassed traditional IT bottlenecks by creating a dedicated innovation hub that rebuilt the core banking experience from the user's perspective, not the legacy system's constraints.",
+            "features": [
+              {
+                "title": "Instant KYC",
+                "description": "Automated identity verification reduced onboarding to < 5 minutes."
+              },
+              {
+                "title": "Predictive Spend",
+                "description": "AI-driven insights to help users save more effectively."
+              }
+            ]
+          },
+          "metrics": [
+            { "value": "+35%", "label": "Digital Adoption" },
+            { "value": "-85%", "label": "Onboarding Time" },
+            { "value": "$42M", "label": "Annual Ops Savings" },
+            { "value": "4.8 Star", "label": "App Store Rating" }
+          ],
+          "timeline": [
+            {
+              "step": "01",
+              "title": "Discovery & Audit",
+              "description": "Week 1-4: Stakeholder interviews and tech stack evaluation."
+            },
+            {
+              "step": "02",
+              "title": "Prototype & Design",
+              "description": "Week 5-12: High-fidelity prototypes and user testing cycles."
+            },
+            {
+              "step": "03",
+              "title": "Core Engineering",
+              "description": "Week 13-40: Agile development of the microservices layer."
+            },
+            {
+              "step": "04",
+              "title": "Pilot & Global Scale",
+              "description": "Week 41-60: Staged rollout to 4 million customers."
+            }
+          ],
+          "teamInvolved": [
+            {
+              "name": "Dr. Elena Vance",
+              "role": "Lead Strategic Partner",
+              "imageSrc": "https://i.pravatar.cc/150?u=a1",
+              "imageAlt": "Elena Vance",
+              "href": "#"
+            },
+            {
+              "name": "Marcus Thorne",
+              "role": "UX/Product Director",
+              "imageSrc": "https://i.pravatar.cc/150?u=a2",
+              "imageAlt": "Marcus Thorne",
+              "href": "#"
+            },
+            {
+              "name": "Julian Voss",
+              "role": "Systems Architect",
+              "imageSrc": "https://i.pravatar.cc/150?u=a6",
+              "imageAlt": "Julian Voss",
+              "href": "#"
+            },
+            {
+              "name": "Sofia Martinez",
+              "role": "Data Scientist",
+              "imageSrc": "https://i.pravatar.cc/150?u=a7",
+              "imageAlt": "Sofia Martinez",
+              "href": "#"
+            }
+          ],
+          "testimonial": {
+            "quote": "Nexus Strategy didn't just design a new app; they transformed our internal culture to be digital-first. Our ability to respond to market shifts has increased tenfold, and the revenue impact was visible within the first quarter of launch.",
+            "name": "Jean-Pierre Rossi",
+            "role": "Chief Digital Officer, European Global Bank"
+          },
+          "gallery": [
+            {
+              "label": "Legacy Platform (2021)",
+              "imageSrc": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200",
+              "imageAlt": "Legacy Banking"
+            },
+            {
+              "label": "Nexus Experience (2023)",
+              "imageSrc": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
+              "imageAlt": "Modern Banking UX"
+            }
+          ],
+          "keyLearnings": [
+            {
+              "title": "Trust is Mobile-First",
+              "description": "Modern banking trust isn't built in marble branches; it's built in the reliability and speed of the mobile app interface."
+            },
+            {
+              "title": "Data as a Service",
+              "description": "Users don't want spreadsheets; they want actionable intelligence on their spending patterns delivered in real-time."
+            }
+          ],
+          "bottomCta": {
+            "title": "Start Your Transformation Today",
+            "description": "Whether it's UX overhaul or a total strategic pivot, our team is ready to deliver measurable growth for your organization.",
+            "buttonLabel": "Book a Deep-Dive",
+            "href": "/#contact"
+          }
+        }
       },
       {
         "industry": "Logistics",
+        "slug": "sustainable-supply-chain",
         "outcomeLabel": "22% Lower Carbon",
         "title": "Sustainable Supply Chain",
         "description": "Optimizing a global logistics provider's network to reduce operational costs and environmental impact simultaneously.",
         "imageSrc": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-        "imageAlt": "Logistics Optimization"
+        "imageAlt": "Logistics Optimization",
+        "details": {
+          "breadcrumbLabel": "Sustainable Supply Chain",
+          "categoryLabel": "Operations Excellence & Sustainability",
+          "pageTitle": "Sustainable Supply Chain: Lower Carbon, Higher Velocity.",
+          "engagementBadges": [
+            { "text": "10 Months Engagement" },
+            { "text": "Global Logistics Provider" },
+            { "text": "Operations Sustainability Award 2024" }
+          ],
+          "challenge": {
+            "title": "Carbon & Cost Pressure",
+            "description": "The client faced rising fuel costs and increased scrutiny around emissions. Routes were planned manually, and reporting lagged weeks behind operations, preventing proactive decision-making.",
+            "bullets": [
+              "Inconsistent route planning across regions.",
+              "Carbon reporting too slow for daily operations.",
+              "High overhead from fragmented vendor workflows."
+            ]
+          },
+          "solution": {
+            "title": "A Lean Decarbonization Program",
+            "description": "Nexus built a decision engine that combined route optimization with real-time emissions estimates, then embedded it into daily planning rituals to sustain improvements.",
+            "features": [
+              {
+                "title": "Route Optimization Simulator",
+                "description": "Scenario planning that balances time, cost, and emissions."
+              },
+              {
+                "title": "Real-Time Emissions Dashboard",
+                "description": "Operational visibility that updates throughout the day."
+              }
+            ]
+          },
+          "metrics": [
+            { "value": "-22%", "label": "Carbon Footprint" },
+            { "value": "+18%", "label": "Cost Efficiency" },
+            { "value": "$31M", "label": "Annualized Savings" },
+            { "value": "99.2%", "label": "On-Time Delivery" }
+          ],
+          "timeline": [
+            {
+              "step": "01",
+              "title": "Discovery & Baseline",
+              "description": "Week 1-3: Map current routes, measure carbon baseline, and identify cost drivers."
+            },
+            {
+              "step": "02",
+              "title": "Network Redesign",
+              "description": "Week 4-8: Build optimization models and validate assumptions with planning teams."
+            },
+            {
+              "step": "03",
+              "title": "Lean Execution",
+              "description": "Week 9-22: Pilot standardized workflows and automate vendor handoffs."
+            },
+            {
+              "step": "04",
+              "title": "Scale & Continuous Improvement",
+              "description": "Week 23-40: Roll out across regions and refine using operational feedback."
+            }
+          ],
+          "teamInvolved": [
+            {
+              "name": "Julian Voss",
+              "role": "Systems Architect",
+              "imageSrc": "https://i.pravatar.cc/150?u=a6",
+              "imageAlt": "Julian Voss",
+              "href": "#"
+            },
+            {
+              "name": "Sofia Martinez",
+              "role": "Data Scientist",
+              "imageSrc": "https://i.pravatar.cc/150?u=a7",
+              "imageAlt": "Sofia Martinez",
+              "href": "#"
+            },
+            {
+              "name": "Marcus Thorne",
+              "role": "UX/Product Director",
+              "imageSrc": "https://i.pravatar.cc/150?u=a2",
+              "imageAlt": "Marcus Thorne",
+              "href": "#"
+            },
+            {
+              "name": "Dr. Elena Vance",
+              "role": "Lead Strategic Partner",
+              "imageSrc": "https://i.pravatar.cc/150?u=a1",
+              "imageAlt": "Elena Vance",
+              "href": "#"
+            }
+          ],
+          "testimonial": {
+            "quote": "Nexus helped us make decarbonization operational, not theoretical. The optimization tool and dashboard changed how our teams plan every day.",
+            "name": "Amina Kruger",
+            "role": "VP Operations, Global Logistics Provider"
+          },
+          "gallery": [
+            {
+              "label": "Legacy Routing (2021)",
+              "imageSrc": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200",
+              "imageAlt": "Legacy Routing"
+            },
+            {
+              "label": "Nexus Planning Engine (2024)",
+              "imageSrc": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200",
+              "imageAlt": "Planning Engine"
+            }
+          ],
+          "keyLearnings": [
+            {
+              "title": "Visibility Drives Adoption",
+              "description": "Teams adopt sustainability when measurements are timely, actionable, and tied to daily workflows."
+            },
+            {
+              "title": "Lean Automations Win Quick",
+              "description": "Small automation wins unlock compounding improvements across regions."
+            }
+          ],
+          "bottomCta": {
+            "title": "Start Your Transformation Today",
+            "description": "Whether it's operational excellence or a sustainability pivot, our team is ready to deliver measurable growth for your organization.",
+            "buttonLabel": "Book a Deep-Dive",
+            "href": "/#contact"
+          }
+        }
       },
       {
         "industry": "Retail",
+        "slug": "unicorn-market-expansion",
         "outcomeLabel": "15 New Markets",
         "title": "Unicorn Market Expansion",
         "description": "Scaling a fast-growth tech brand from local presence to a dominant international player in under 2 years.",
         "imageSrc": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
-        "imageAlt": "Market Entry"
+        "imageAlt": "Market Entry",
+        "details": {
+          "breadcrumbLabel": "Unicorn Market Expansion",
+          "categoryLabel": "Market Expansion & Growth Strategy",
+          "pageTitle": "Unicorn Market Expansion: From Local Signal to Global Momentum.",
+          "engagementBadges": [
+            { "text": "9 Months Engagement" },
+            { "text": "Fast-Growth Tech Brand" },
+            { "text": "Growth Leadership Award 2024" }
+          ],
+          "challenge": {
+            "title": "Stalled Go-To-Market",
+            "description": "The client had product-market fit locally but struggled to translate it across regions. Sales cycles slowed, messaging became inconsistent, and partnerships were delayed by fragmented planning and data silos.",
+            "bullets": [
+              "Inconsistent value proposition across regions.",
+              "Slow partner onboarding and approvals.",
+              "Data silos delaying decisions and forecasting."
+            ]
+          },
+          "solution": {
+            "title": "A Localization-Led Growth System",
+            "description": "Nexus designed a modular expansion playbook that aligned product, marketing, and operations. We standardized inputs, improved forecasting, and built tooling to keep local teams fast and consistent.",
+            "features": [
+              {
+                "title": "Localization Operating Model",
+                "description": "Guidelines and workflows that made regional launch execution repeatable."
+              },
+              {
+                "title": "Growth Analytics & Forecasting",
+                "description": "A single view of pipeline, conversion, and market signals to prioritize investments."
+              }
+            ]
+          },
+          "metrics": [
+            { "value": "15", "label": "New Markets" },
+            { "value": "+42%", "label": "Revenue Uplift" },
+            { "value": "2.1x", "label": "Lead Generation" },
+            { "value": "28%", "label": "Faster Sales Cycle" }
+          ],
+          "timeline": [
+            {
+              "step": "01",
+              "title": "Discovery & Market Signal",
+              "description": "Week 1-6: Identify high-potential regions and validate assumptions with customer discovery."
+            },
+            {
+              "step": "02",
+              "title": "Prototype & Messaging",
+              "description": "Week 7-12: Build localization message kits and run rapid channel experiments."
+            },
+            {
+              "step": "03",
+              "title": "Operational Launch System",
+              "description": "Week 13-28: Implement partner onboarding workflows and reporting pipelines."
+            },
+            {
+              "step": "04",
+              "title": "Scale & Portfolio Steering",
+              "description": "Week 29-40: Roll out playbooks across markets and steer investments with live metrics."
+            }
+          ],
+          "teamInvolved": [
+            {
+              "name": "Dr. Elena Vance",
+              "role": "Lead Strategic Partner",
+              "imageSrc": "https://i.pravatar.cc/150?u=a1",
+              "imageAlt": "Elena Vance",
+              "href": "#"
+            },
+            {
+              "name": "Marcus Thorne",
+              "role": "UX/Product Director",
+              "imageSrc": "https://i.pravatar.cc/150?u=a2",
+              "imageAlt": "Marcus Thorne",
+              "href": "#"
+            },
+            {
+              "name": "Sofia Martinez",
+              "role": "Data Scientist",
+              "imageSrc": "https://i.pravatar.cc/150?u=a7",
+              "imageAlt": "Sofia Martinez",
+              "href": "#"
+            },
+            {
+              "name": "Julian Voss",
+              "role": "Systems Architect",
+              "imageSrc": "https://i.pravatar.cc/150?u=a6",
+              "imageAlt": "Julian Voss",
+              "href": "#"
+            }
+          ],
+          "testimonial": {
+            "quote": "Nexus didn’t just recommend a plan; they turned expansion into a system our teams could execute quickly and consistently.",
+            "name": "Clara Nguyen",
+            "role": "Head of Global Growth, Fast-Tech Unicorn"
+          },
+          "gallery": [
+            {
+              "label": "Local-Only Playbook (2022)",
+              "imageSrc": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1200",
+              "imageAlt": "Local-Only Playbook"
+            },
+            {
+              "label": "Global Expansion Engine (2023)",
+              "imageSrc": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+              "imageAlt": "Global Expansion Engine"
+            }
+          ],
+          "keyLearnings": [
+            {
+              "title": "Speed Beats Perfect",
+              "description": "Launch velocity came from repeatable workflows, not from waiting for complete certainty."
+            },
+            {
+              "title": "Localization is a Product",
+              "description": "Consistency across regions improved conversion because the customer experience felt native everywhere."
+            }
+          ],
+          "bottomCta": {
+            "title": "Start Your Transformation Today",
+            "description": "Whether you are expanding into new markets or redesigning your go-to-market system, we can help you move faster with confidence.",
+            "buttonLabel": "Book a Deep-Dive",
+            "href": "/#contact"
+          }
+        }
       },
       {
         "industry": "Tech",
+        "slug": "saas-product-pivot",
         "outcomeLabel": "ROI in 6 Months",
         "title": "SaaS Product Pivot",
         "description": "Restructuring a legacy software firm's product offering to a high-margin subscription model.",
         "imageSrc": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=800",
-        "imageAlt": "Enterprise SaaS"
+        "imageAlt": "Enterprise SaaS",
+        "details": {
+          "breadcrumbLabel": "SaaS Product Pivot",
+          "categoryLabel": "Product Strategy & Subscription Growth",
+          "pageTitle": "SaaS Product Pivot: Subscription-Led Growth in 6 Months.",
+          "engagementBadges": [
+            { "text": "6 Months Engagement" },
+            { "text": "Legacy Software Firm" },
+            { "text": "Product Strategy Award 2024" }
+          ],
+          "challenge": {
+            "title": "Churn from Legacy Offerings",
+            "description": "The client’s product packaging was built for perpetual licenses, leading to slow onboarding and limited value realization. Customer churn remained high, and revenue forecasting was unreliable due to inconsistent billing and activation tracking.",
+            "bullets": [
+              "Perpetual licensing model reduced recurring value.",
+              "Onboarding gaps delayed activation for new customers.",
+              "Fragmented billing data limited accurate forecasting."
+            ]
+          },
+          "solution": {
+            "title": "A Subscription Experience Redesign",
+            "description": "Nexus rebuilt the product experience around time-to-value. We redesigned packaging, updated onboarding, and implemented analytics to guide iteration based on customer behavior.",
+            "features": [
+              {
+                "title": "Subscription Packaging & Pricing",
+                "description": "Offer design that matched customer outcomes and improved upgrade paths."
+              },
+              {
+                "title": "Activation Journey in Product",
+                "description": "In-app guidance that accelerated time-to-value and reduced early churn."
+              }
+            ]
+          },
+          "metrics": [
+            { "value": "+31%", "label": "MRR Growth" },
+            { "value": "-24%", "label": "Customer Churn" },
+            { "value": "$18M", "label": "Expansion Revenue" },
+            { "value": "38%", "label": "Faster Activation" }
+          ],
+          "timeline": [
+            {
+              "step": "01",
+              "title": "Discovery & Billing Audit",
+              "description": "Week 1-2: Map current onboarding, activation funnels, and billing constraints."
+            },
+            {
+              "step": "02",
+              "title": "Offer & UX Prototyping",
+              "description": "Week 3-6: Design packaging flows and prototype in-app activation moments."
+            },
+            {
+              "step": "03",
+              "title": "Engineering for Time-to-Value",
+              "description": "Week 7-18: Implement subscription flows and analytics instrumentation."
+            },
+            {
+              "step": "04",
+              "title": "Launch & Iteration",
+              "description": "Week 19-24: Roll out, monitor performance, and optimize based on behavioral data."
+            }
+          ],
+          "teamInvolved": [
+            {
+              "name": "Marcus Thorne",
+              "role": "UX/Product Director",
+              "imageSrc": "https://i.pravatar.cc/150?u=a2",
+              "imageAlt": "Marcus Thorne",
+              "href": "#"
+            },
+            {
+              "name": "Julian Voss",
+              "role": "Systems Architect",
+              "imageSrc": "https://i.pravatar.cc/150?u=a6",
+              "imageAlt": "Julian Voss",
+              "href": "#"
+            },
+            {
+              "name": "Sofia Martinez",
+              "role": "Data Scientist",
+              "imageSrc": "https://i.pravatar.cc/150?u=a7",
+              "imageAlt": "Sofia Martinez",
+              "href": "#"
+            },
+            {
+              "name": "Dr. Elena Vance",
+              "role": "Lead Strategic Partner",
+              "imageSrc": "https://i.pravatar.cc/150?u=a1",
+              "imageAlt": "Elena Vance",
+              "href": "#"
+            }
+          ],
+          "testimonial": {
+            "quote": "Nexus helped us pivot from a legacy offering to a subscription experience with measurable value in just one quarter cycle.",
+            "name": "Robert Hayes",
+            "role": "Chief Product Officer, Enterprise SaaS"
+          },
+          "gallery": [
+            {
+              "label": "Perpetual License Model (2021)",
+              "imageSrc": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1200",
+              "imageAlt": "Perpetual License Model"
+            },
+            {
+              "label": "Subscription Experience (2023)",
+              "imageSrc": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1200",
+              "imageAlt": "Subscription Experience"
+            }
+          ],
+          "keyLearnings": [
+            {
+              "title": "Time-to-Value is the Strategy",
+              "description": "Packaging improved outcomes only after the onboarding journey reduced time-to-value friction."
+            },
+            {
+              "title": "Instrumentation Enables Iteration",
+              "description": "Behavioral analytics turned product decisions into a fast, evidence-driven loop."
+            }
+          ],
+          "bottomCta": {
+            "title": "Start Your Transformation Today",
+            "description": "From product strategy to subscription redesign, we can help you grow recurring value with a modern experience.",
+            "buttonLabel": "Book a Deep-Dive",
+            "href": "/#contact"
+          }
+        }
       },
       {
         "industry": "Healthcare",
+        "slug": "predictive-patient-care",
         "outcomeLabel": "Patient Safety +40%",
         "title": "Predictive Patient Care",
         "description": "Implementing AI-driven analytics for a regional hospital network to improve patient outcomes and efficiency.",
         "imageSrc": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800",
-        "imageAlt": "Healthcare Analytics"
+        "imageAlt": "Healthcare Analytics",
+        "details": {
+          "breadcrumbLabel": "Predictive Patient Care",
+          "categoryLabel": "AI-Enabled Healthcare Operations",
+          "pageTitle": "Predictive Patient Care: Safer Outcomes, Faster Decisions.",
+          "engagementBadges": [
+            { "text": "12 Months Engagement" },
+            { "text": "Regional Hospital Network" },
+            { "text": "Clinical Innovation Award 2024" }
+          ],
+          "challenge": {
+            "title": "Delayed Detection & Protocol Drift",
+            "description": "Clinical teams struggled with late detection of at-risk patients and inconsistent adherence to evolving care protocols. Decision-making required manual review across systems, increasing turnaround time for interventions.",
+            "bullets": [
+              "Time-to-decision too long during peak hours.",
+              "Inconsistent protocol execution across wards.",
+              "Limited visibility into risk clusters and trends."
+            ]
+          },
+          "solution": {
+            "title": "Prediction to Action Workflow",
+            "description": "Nexus implemented predictive analytics and translated the outputs into clinician-friendly workflows with real-time alerts, dashboards, and governance.",
+            "features": [
+              {
+                "title": "Risk Prediction Models",
+                "description": "Identify at-risk patients earlier using multi-signal data."
+              },
+              {
+                "title": "Clinician Decision Dashboard",
+                "description": "Real-time views and actionable recommendations aligned with protocols."
+              }
+            ]
+          },
+          "metrics": [
+            { "value": "+40%", "label": "Patient Safety" },
+            { "value": "-30%", "label": "Time to Diagnosis" },
+            { "value": "$12M", "label": "Operational Savings" },
+            { "value": "4.7 Star", "label": "Staff Satisfaction" }
+          ],
+          "timeline": [
+            {
+              "step": "01",
+              "title": "Data Readiness & Baseline",
+              "description": "Week 1-6: Validate clinical data sources and establish baseline KPIs."
+            },
+            {
+              "step": "02",
+              "title": "Model Prototyping",
+              "description": "Week 7-12: Build and test prediction approaches with pilot cohorts."
+            },
+            {
+              "step": "03",
+              "title": "Workflow Integration",
+              "description": "Week 13-32: Embed alerts into existing clinical processes with governance."
+            },
+            {
+              "step": "04",
+              "title": "Network Scale",
+              "description": "Week 33-48: Roll out across sites and iterate using outcomes feedback."
+            }
+          ],
+          "teamInvolved": [
+            {
+              "name": "Sofia Martinez",
+              "role": "Data Scientist",
+              "imageSrc": "https://i.pravatar.cc/150?u=a7",
+              "imageAlt": "Sofia Martinez",
+              "href": "#"
+            },
+            {
+              "name": "Marcus Thorne",
+              "role": "UX/Product Director",
+              "imageSrc": "https://i.pravatar.cc/150?u=a2",
+              "imageAlt": "Marcus Thorne",
+              "href": "#"
+            },
+            {
+              "name": "Julian Voss",
+              "role": "Systems Architect",
+              "imageSrc": "https://i.pravatar.cc/150?u=a6",
+              "imageAlt": "Julian Voss",
+              "href": "#"
+            },
+            {
+              "name": "Dr. Elena Vance",
+              "role": "Lead Strategic Partner",
+              "imageSrc": "https://i.pravatar.cc/150?u=a1",
+              "imageAlt": "Elena Vance",
+              "href": "#"
+            }
+          ],
+          "testimonial": {
+            "quote": "The analytics didn’t just improve predictions; it changed day-to-day decisions. Our staff feels supported with clearer, faster pathways.",
+            "name": "Dr. Priya Shah",
+            "role": "Director of Clinical Innovation, Regional Hospital Network"
+          },
+          "gallery": [
+            {
+              "label": "Manual Review (2021)",
+              "imageSrc": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1200",
+              "imageAlt": "Manual Review"
+            },
+            {
+              "label": "Predictive Care Console (2023)",
+              "imageSrc": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1200",
+              "imageAlt": "Predictive Care Console"
+            }
+          ],
+          "keyLearnings": [
+            {
+              "title": "Alerts Must Fit Workflows",
+              "description": "Prediction value depends on how well recommendations align with clinician routines."
+            },
+            {
+              "title": "Governance Protects Momentum",
+              "description": "Clear approval paths and auditability kept teams confident while scaling models."
+            }
+          ],
+          "bottomCta": {
+            "title": "Start Your Transformation Today",
+            "description": "From AI enablement to workflow redesign, we help healthcare organizations deliver safer outcomes with measurable efficiency.",
+            "buttonLabel": "Book a Deep-Dive",
+            "href": "/#contact"
+          }
+        }
       },
       {
         "industry": "Energy",
+        "slug": "net-zero-strategy-2030",
         "outcomeLabel": "Net Zero Path",
         "title": "Net Zero Strategy 2030",
         "description": "Developing a roadmap for a national utility company to transition 80% of its grid to renewables by 2030.",
         "imageSrc": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
-        "imageAlt": "Energy Grid"
+        "imageAlt": "Energy Grid",
+        "details": {
+          "breadcrumbLabel": "Net Zero Strategy 2030",
+          "categoryLabel": "Decarbonization & Grid Transformation",
+          "pageTitle": "Net Zero Strategy 2030: A Practical Roadmap to Renewables.",
+          "engagementBadges": [
+            { "text": "14 Months Engagement" },
+            { "text": "National Utility Company" },
+            { "text": "Climate Strategy Award 2024" }
+          ],
+          "challenge": {
+            "title": "Complex Grid Constraints",
+            "description": "The utility needed a credible net-zero plan but faced complex constraints across generation, transmission, and compliance timelines. Without scenario modeling and governance, decisions were either delayed or oversimplified.",
+            "bullets": [
+              "Conflicting timelines between assets and regulatory requirements.",
+              "Unclear scenario outcomes across demand and supply assumptions.",
+              "Governance gaps slowing cross-team alignment."
+            ]
+          },
+          "solution": {
+            "title": "Scenario Planning + Governance",
+            "description": "Nexus developed a roadmap that combined scenario modeling with operational governance. We translated targets into investment phases, roles, and measurable KPIs.",
+            "features": [
+              {
+                "title": "Renewables Transition Scenarios",
+                "description": "Model demand, grid constraints, and risk to pick resilient pathways."
+              },
+              {
+                "title": "Decision Governance Framework",
+                "description": "Clear approval workflows and reporting to keep stakeholders aligned."
+              }
+            ]
+          },
+          "metrics": [
+            { "value": "80%", "label": "Renewables Transition" },
+            { "value": "-55%", "label": "Emissions Reduction" },
+            { "value": "+25%", "label": "Reliability Improvement" },
+            { "value": "$48M", "label": "Program Efficiency" }
+          ],
+          "timeline": [
+            {
+              "step": "01",
+              "title": "Baseline & Constraints Mapping",
+              "description": "Week 1-4: Audit assets, demand patterns, and regulatory constraints."
+            },
+            {
+              "step": "02",
+              "title": "Scenario Design",
+              "description": "Week 5-12: Build scenarios and stress-test outcomes with technical teams."
+            },
+            {
+              "step": "03",
+              "title": "Roadmap & Investment Phases",
+              "description": "Week 13-40: Translate the chosen pathway into phased investments and KPIs."
+            },
+            {
+              "step": "04",
+              "title": "Governance & Rollout",
+              "description": "Week 41-60: Establish decision governance and execute initial rollout milestones."
+            }
+          ],
+          "teamInvolved": [
+            {
+              "name": "Dr. Elena Vance",
+              "role": "Lead Strategic Partner",
+              "imageSrc": "https://i.pravatar.cc/150?u=a1",
+              "imageAlt": "Elena Vance",
+              "href": "#"
+            },
+            {
+              "name": "Julian Voss",
+              "role": "Systems Architect",
+              "imageSrc": "https://i.pravatar.cc/150?u=a6",
+              "imageAlt": "Julian Voss",
+              "href": "#"
+            },
+            {
+              "name": "Sofia Martinez",
+              "role": "Data Scientist",
+              "imageSrc": "https://i.pravatar.cc/150?u=a7",
+              "imageAlt": "Sofia Martinez",
+              "href": "#"
+            },
+            {
+              "name": "Marcus Thorne",
+              "role": "UX/Product Director",
+              "imageSrc": "https://i.pravatar.cc/150?u=a2",
+              "imageAlt": "Marcus Thorne",
+              "href": "#"
+            }
+          ],
+          "testimonial": {
+            "quote": "Nexus delivered a plan that our leadership can actually govern and execute. Scenario clarity reduced debate and accelerated commitments.",
+            "name": "Ethan Marshall",
+            "role": "Chief Strategy Officer, National Utility"
+          },
+          "gallery": [
+            {
+              "label": "Grid Planning (2021)",
+              "imageSrc": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1200",
+              "imageAlt": "Grid Planning"
+            },
+            {
+              "label": "Net Zero Roadmap Console (2023)",
+              "imageSrc": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
+              "imageAlt": "Net Zero Roadmap Console"
+            }
+          ],
+          "keyLearnings": [
+            {
+              "title": "Scenarios Reduce Risk of Regret",
+              "description": "The best roadmap is the one that stays resilient under uncertainty."
+            },
+            {
+              "title": "Governance Turns Targets into Actions",
+              "description": "Clear decision ownership is what makes net-zero plans execute over time."
+            }
+          ],
+          "bottomCta": {
+            "title": "Start Your Transformation Today",
+            "description": "From decarbonization strategy to grid transformation governance, our team helps you deliver measurable change with confidence.",
+            "buttonLabel": "Book a Deep-Dive",
+            "href": "/#contact"
+          }
+        }
       }
     ]
   },

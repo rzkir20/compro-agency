@@ -28,7 +28,21 @@ import {
 
 import data from "../../lib/data.json";
 
+import { Link, useNavigate } from "react-router";
+
 const homePageData = (data as HomePageData).homePage;
+const CASE_STUDIES = (data as PortfolioData).portfolio.caseStudies;
+const teamData = (data as TeamData).team;
+const TEAM_LEADERS = teamData.leaders;
+const TEAM_SPECIALISTS = teamData.specialists;
+
+const getTeamMemberSlug = (name: string) => {
+  const leader = TEAM_LEADERS.find((m) => m.name === name);
+  if (leader) return leader.slug;
+
+  const specialist = TEAM_SPECIALISTS.find((m) => m.name === name);
+  return specialist?.slug;
+};
 
 const aboutHighlightIcons: Record<
   HomeAboutHighlight["icon"],
@@ -51,8 +65,13 @@ const servicesIcons: Record<
 };
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
-    <main style={{ viewTransitionName: "main-content" } as React.CSSProperties}>
+    <main
+      style={{ viewTransitionName: "main-content" } as React.CSSProperties}
+      className="flex-1"
+    >
       <section
         id="home"
         className="lg:pt-24 pt-32 pb-10 min-h-full lg:min-h-screen flex items-center hero-gradient relative overflow-hidden"
@@ -294,27 +313,33 @@ export default function Home() {
 
         <div className="max-w-full-sm xl:container mx-auto px-4 sm:px-6 overflow-x-auto pb-8 scrollbar-hide">
           <div className="flex gap-6 sm:gap-8 w-max">
-            {homePageData.portfolio.items.map((item) => (
-              <div
-                key={item.title}
-                className="w-[280px] sm:w-[360px] lg:w-[400px] group cursor-pointer"
+            {CASE_STUDIES.map((c) => (
+              <Link
+                key={c.slug}
+                to={`/portfolio/${c.slug}`}
+                className="w-[280px] sm:w-[360px] lg:w-[400px] group cursor-pointer block"
               >
                 <div className="aspect-4/5 rounded-3xl overflow-hidden mb-6 relative">
                   <img
-                    src={item.imageSrc}
+                    src={c.imageSrc}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    alt={item.imageAlt}
+                    alt={c.imageAlt}
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent" />
                   <div className="absolute bottom-6 left-6">
-                    <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-bold">
-                      {item.tag}
-                    </span>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-bold uppercase tracking-wider">
+                        {c.industry}
+                      </span>
+                      <span className="px-3 py-1 bg-blue-600 text-white rounded-full text-[10px] font-bold uppercase tracking-wider">
+                        {c.outcomeLabel}
+                      </span>
+                    </div>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
-                <p className="text-slate-400">{item.description}</p>
-              </div>
+                <h3 className="text-2xl font-bold mb-2">{c.title}</h3>
+                <p className="text-slate-400">{c.description}</p>
+              </Link>
             ))}
           </div>
         </div>
@@ -331,19 +356,33 @@ export default function Home() {
                 {homePageData.team.title}
               </h2>
             </div>
-            <a
-              href="#"
+            <Link
+              to="/team"
               id="team-all-link"
               className="text-blue-600 font-bold flex items-center gap-2 group"
             >
               {homePageData.team.joinLabel}
               <FaChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {homePageData.team.members.map((member, index) => (
-              <div key={member.name} className="group text-center">
+              <div
+                key={member.name}
+                className="group text-center cursor-pointer"
+                role="button"
+                tabIndex={0}
+                onClick={() => {
+                  const slug = getTeamMemberSlug(member.name);
+                  if (slug) navigate(`/team/${slug}`);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key !== "Enter") return;
+                  const slug = getTeamMemberSlug(member.name);
+                  if (slug) navigate(`/team/${slug}`);
+                }}
+              >
                 <div className="aspect-square rounded-2xl overflow-hidden mb-6 grayscale hover:grayscale-0 transition-all duration-500">
                   <img
                     src={member.imageSrc}
@@ -351,13 +390,19 @@ export default function Home() {
                     alt={member.imageAlt}
                   />
                 </div>
-                <h4 className="text-lg font-bold text-slate-900">{member.name}</h4>
+                <h4 className="text-lg font-bold text-slate-900">
+                  {member.name}
+                </h4>
                 <p className="text-slate-500 text-sm mb-4">{member.role}</p>
                 <div className="flex justify-center gap-4 text-slate-400">
                   <a
                     href="#"
                     id={`social-${index + 1}-li`}
                     className="hover:text-blue-600 transition-colors"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                    }}
                   >
                     <FaLinkedin className="w-4 h-4" />
                   </a>
@@ -365,6 +410,10 @@ export default function Home() {
                     href="#"
                     id={`social-${index + 1}-tw`}
                     className="hover:text-blue-400 transition-colors"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                    }}
                   >
                     <FaTwitter className="w-4 h-4" />
                   </a>

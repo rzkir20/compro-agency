@@ -2,6 +2,8 @@ import React from "react";
 
 import { FaArrowRight, FaQuoteLeft, FaTrophy } from "react-icons/fa";
 
+import { Link } from "react-router";
+
 import data from "../../lib/data.json";
 
 const CASE_STUDIES = (data as PortfolioData).portfolio.caseStudies;
@@ -78,20 +80,10 @@ export default function Portfolio() {
         <div className="max-w-full-sm xl:container mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {CASE_STUDIES.map((c) => (
-              <div
-                key={c.title}
-                className="group cursor-pointer"
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                    // Placeholder link behavior; you can wire to a real case-study route later.
-                    window.location.href = "#";
-                  }
-                }}
-                onClick={() => {
-                  window.location.href = "#";
-                }}
+              <Link
+                key={c.slug ?? c.title}
+                to={`/portfolio/${c.slug}`}
+                className="group cursor-pointer block"
               >
                 <div className="aspect-4/5 rounded-3xl overflow-hidden mb-6 relative bg-slate-100">
                   <img
@@ -118,7 +110,7 @@ export default function Portfolio() {
                   Read Case Study{" "}
                   <FaArrowRight className="w-4 h-4" aria-hidden="true" />
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
