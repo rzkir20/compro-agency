@@ -1,18 +1,6 @@
 import React from "react";
 
 import {
-  MapPin,
-  Mail,
-  Monitor,
-  Phone,
-  Send,
-  Target,
-  TrendingUp,
-  Users,
-  Zap,
-} from "lucide-react";
-
-import {
   FaArrowRight,
   FaLinkedin,
   FaQuoteLeft,
@@ -26,19 +14,31 @@ import {
 
 import { IoBarChart, IoLayers } from "react-icons/io5";
 
+import {
+  FiMapPin,
+  FiMail,
+  FiMonitor,
+  FiPhone,
+  FiSend,
+  FiTarget,
+  FiTrendingUp,
+  FiUsers,
+  FiZap,
+} from "react-icons/fi";
+
 export default function Home() {
   return (
     <main style={{ viewTransitionName: "main-content" } as React.CSSProperties}>
       <section
         id="home"
-        className="pt-20 lg:pt-0 lg:h-screen flex items-center hero-gradient relative overflow-hidden"
+        className="pt-20 lg:h-screen flex items-center hero-gradient relative overflow-hidden"
       >
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-500 rounded-full blur-[120px] -mr-96 -mt-96" />
           <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-slate-400 rounded-full blur-[100px] -ml-48 -mb-48" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
+        <div className="container mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
           <div className="text-white space-y-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-blue-400 text-xs font-bold uppercase tracking-widest">
               <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
@@ -131,8 +131,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="about" className="py-20 bg-slate-50">
+        <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
               <div>
@@ -152,7 +152,7 @@ export default function Home() {
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="flex gap-4">
                   <div className="w-12 h-12 shrink-0 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center">
-                    <Target className="w-6 h-6" />
+                    <FiTarget className="w-6 h-6" />
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900">Mission-Driven</h4>
@@ -163,7 +163,7 @@ export default function Home() {
                 </div>
                 <div className="flex gap-4">
                   <div className="w-12 h-12 shrink-0 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center">
-                    <Zap className="w-6 h-6" />
+                    <FiZap className="w-6 h-6" />
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900">Impact-First</h4>
@@ -216,8 +216,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 text-center mb-16">
+      <section id="services" className="py-20 bg-white">
+        <div className="container mx-auto px-6 text-center mb-16">
           <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">
             What We Do
           </span>
@@ -230,10 +230,10 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="container mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="p-8 bg-slate-50 border border-slate-100 rounded-2xl card-hover group">
             <div className="w-14 h-14 bg-white shadow-sm rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-              <TrendingUp className="w-7 h-7" />
+              <FiTrendingUp className="w-7 h-7" />
             </div>
             <h3 className="text-xl font-bold text-slate-900 mb-4">
               Strategic Planning
@@ -279,7 +279,7 @@ export default function Home() {
 
           <div className="p-8 bg-slate-50 border border-slate-100 rounded-2xl card-hover group">
             <div className="w-14 h-14 bg-white shadow-sm rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-              <Monitor className="w-7 h-7" />
+              <FiMonitor className="w-7 h-7" />
             </div>
             <h3 className="text-xl font-bold text-slate-900 mb-4">
               Digital Transformation
@@ -302,7 +302,7 @@ export default function Home() {
 
           <div className="p-8 bg-slate-50 border border-slate-100 rounded-2xl card-hover group">
             <div className="w-14 h-14 bg-white shadow-sm rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-              <Users className="w-7 h-7" />
+              <FiUsers className="w-7 h-7" />
             </div>
             <h3 className="text-xl font-bold text-slate-900 mb-4">
               Operations Excellence
@@ -371,8 +371,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="portfolio" className="py-24 bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+      <section id="portfolio" className="py-20 bg-slate-900 text-white">
+        <div className="container mx-auto px-6 flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div className="max-w-xl">
             <span className="text-blue-400 font-bold uppercase tracking-widest text-sm">
               Success Stories
@@ -403,9 +403,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 overflow-x-auto pb-8 scrollbar-hide">
+        <div className="container mx-auto px-6 overflow-x-auto pb-8 scrollbar-hide">
           <div className="flex gap-8 w-max">
-            <div className="w-[400px] group cursor-pointer">
+            <div className="w-[500px] group cursor-pointer">
               <div className="aspect-4/5 rounded-3xl overflow-hidden mb-6 relative">
                 <img
                   src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800"
@@ -475,8 +475,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="team" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="team" className="py-20 bg-white">
+        <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-16">
             <div className="max-w-2xl">
               <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">
@@ -626,8 +626,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-5xl mx-auto px-6 text-center">
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-6 text-center">
           <div className="mb-8">
             <FaQuoteLeft className="w-12 h-12 text-blue-200" />
           </div>
@@ -648,14 +648,14 @@ export default function Home() {
               <IoLayers className="w-9 h-9" />
               <FaGlobe className="w-9 h-9" />
               <FaBriefcase className="w-9 h-9" />
-              <TrendingUp className="w-9 h-9" />
+              <FiTrendingUp className="w-9 h-9" />
             </div>
           </div>
         </div>
       </section>
 
-      <section id="contact" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="contact" className="py-20 bg-white">
+        <div className="container mx-auto px-6">
           <div className="bg-slate-900 rounded-[3rem] overflow-hidden flex flex-col lg:flex-row">
             <div className="lg:w-1/2 p-12 lg:p-20 text-white space-y-12">
               <div className="space-y-4">
@@ -671,7 +671,7 @@ export default function Home() {
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-blue-400 shrink-0">
-                    <Mail className="w-5 h-5" />
+                    <FiMail className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="font-bold">Email Us</h4>
@@ -680,7 +680,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-blue-400 shrink-0">
-                    <Phone className="w-5 h-5" />
+                    <FiPhone className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="font-bold">Call Us</h4>
@@ -689,7 +689,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-blue-400 shrink-0">
-                    <MapPin className="w-5 h-5" />
+                    <FiMapPin className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="font-bold">Office</h4>
@@ -762,7 +762,7 @@ export default function Home() {
                   className="w-full py-4 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition-all flex items-center justify-center gap-2"
                 >
                   Send Message
-                  <Send className="w-5 h-5" />
+                  <FiSend className="w-5 h-5" />
                 </button>
               </form>
             </div>

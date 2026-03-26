@@ -1,11 +1,16 @@
-import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa";
 
-import { ArrowRight, Layers } from "lucide-react";
+import { FiLayers } from "react-icons/fi";
 
 export default function Footer() {
   return (
     <footer className="bg-slate-50 border-t border-slate-200 pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <a
@@ -14,7 +19,7 @@ export default function Footer() {
               className="flex items-center gap-2"
             >
               <div className="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center">
-                <Layers className="text-white text-lg" />
+                <FiLayers className="text-white text-lg" />
               </div>
               <span className="text-lg font-bold text-slate-900">NEXUS</span>
             </a>
@@ -111,7 +116,7 @@ export default function Footer() {
                 placeholder="Enter email"
               />
               <button className="bg-slate-900 text-white p-2 rounded-lg hover:bg-slate-800 transition-colors">
-                <ArrowRight className="w-4 h-4" />
+                <FaArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>

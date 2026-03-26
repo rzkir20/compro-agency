@@ -1,0 +1,312 @@
+import React from "react";
+
+import { FaArrowRight, FaQuoteLeft, FaTrophy } from "react-icons/fa";
+
+type CaseStudy = {
+  industry: string;
+  outcomeLabel: string;
+  title: string;
+  description: string;
+  imageSrc: string;
+  imageAlt: string;
+};
+
+const CASE_STUDIES: CaseStudy[] = [
+  {
+    industry: "Fintech",
+    outcomeLabel: "+35% Adoption",
+    title: "Digital Banking Reimagined",
+    description:
+      "A major European bank overhauled its UX strategy, resulting in record-breaking engagement and 35% growth in digital services.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
+    imageAlt: "Banking Transformation",
+  },
+  {
+    industry: "Logistics",
+    outcomeLabel: "22% Lower Carbon",
+    title: "Sustainable Supply Chain",
+    description:
+      "Optimizing a global logistics provider's network to reduce operational costs and environmental impact simultaneously.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    imageAlt: "Logistics Optimization",
+  },
+  {
+    industry: "Retail",
+    outcomeLabel: "15 New Markets",
+    title: "Unicorn Market Expansion",
+    description:
+      "Scaling a fast-growth tech brand from local presence to a dominant international player in under 2 years.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
+    imageAlt: "Market Entry",
+  },
+  {
+    industry: "Tech",
+    outcomeLabel: "ROI in 6 Months",
+    title: "SaaS Product Pivot",
+    description:
+      "Restructuring a legacy software firm's product offering to a high-margin subscription model.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=800",
+    imageAlt: "Enterprise SaaS",
+  },
+  {
+    industry: "Healthcare",
+    outcomeLabel: "Patient Safety +40%",
+    title: "Predictive Patient Care",
+    description:
+      "Implementing AI-driven analytics for a regional hospital network to improve patient outcomes and efficiency.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800",
+    imageAlt: "Healthcare Analytics",
+  },
+  {
+    industry: "Energy",
+    outcomeLabel: "Net Zero Path",
+    title: "Net Zero Strategy 2030",
+    description:
+      "Developing a roadmap for a national utility company to transition 80% of its grid to renewables by 2030.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
+    imageAlt: "Energy Grid",
+  },
+];
+
+export default function Portfolio() {
+  return (
+    <main
+      style={{ viewTransitionName: "main-content" } as React.CSSProperties}
+      className="flex-1 pt-20"
+    >
+      <section className="hero-gradient py-24 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-500 rounded-full blur-[120px] -mr-96 -mt-96" />
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-slate-400 rounded-full blur-[100px] -ml-48 -mb-48" />
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
+            <FaTrophy className="w-4 h-4" aria-hidden="true" />
+            Excellence in Execution
+          </div>
+          <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
+            Our Impact in Action
+          </h1>
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            Explore how Nexus Strategy has partnered with global leaders to
+            navigate disruption and unlock sustainable growth across diverse
+            industries.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-10 border-b border-slate-100 bg-white sticky top-20 z-40">
+        <div className="container mx-auto px-6 flex flex-wrap items-center justify-center gap-4">
+          <button
+            id="filter-all"
+            className="px-6 py-2 rounded-full bg-slate-900 text-white text-sm font-bold transition-all"
+            type="button"
+          >
+            All Industries
+          </button>
+          <button
+            id="filter-fintech"
+            className="px-6 py-2 rounded-full bg-slate-50 text-slate-600 text-sm font-bold hover:bg-slate-100 transition-all"
+            type="button"
+          >
+            Fintech
+          </button>
+          <button
+            id="filter-retail"
+            className="px-6 py-2 rounded-full bg-slate-50 text-slate-600 text-sm font-bold hover:bg-slate-100 transition-all"
+            type="button"
+          >
+            Retail
+          </button>
+          <button
+            id="filter-energy"
+            className="px-6 py-2 rounded-full bg-slate-50 text-slate-600 text-sm font-bold hover:bg-slate-100 transition-all"
+            type="button"
+          >
+            Energy
+          </button>
+          <button
+            id="filter-tech"
+            className="px-6 py-2 rounded-full bg-slate-50 text-slate-600 text-sm font-bold hover:bg-slate-100 transition-all"
+            type="button"
+          >
+            Technology
+          </button>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white" id="portfolio">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {CASE_STUDIES.map((c) => (
+              <div
+                key={c.title}
+                className="group cursor-pointer"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    // Placeholder link behavior; you can wire to a real case-study route later.
+                    window.location.href = "#";
+                  }
+                }}
+                onClick={() => {
+                  window.location.href = "#";
+                }}
+              >
+                <div className="aspect-4/5 rounded-3xl overflow-hidden mb-6 relative bg-slate-100">
+                  <img
+                    src={c.imageSrc}
+                    alt={c.imageAlt}
+                    className="case-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent" />
+                  <div className="absolute top-6 left-6 flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-white/20 backdrop-blur-md text-white rounded-full text-[10px] font-bold uppercase tracking-wider">
+                      {c.industry}
+                    </span>
+                    <span className="px-3 py-1 bg-blue-600 text-white rounded-full text-[10px] font-bold uppercase tracking-wider">
+                      {c.outcomeLabel}
+                    </span>
+                  </div>
+                </div>
+
+                <h3 className="text-2xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                  {c.title}
+                </h3>
+                <p className="text-slate-500 mb-6">{c.description}</p>
+                <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                  Read Case Study{" "}
+                  <FaArrowRight className="w-4 h-4" aria-hidden="true" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">
+                Measurable Results
+              </span>
+              <h2 className="text-4xl font-bold text-slate-900 tracking-tight">
+                We measure our success by the success of our clients.
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Beyond the strategies and slides, we focus on tangible metrics
+                that move the needle. Our results are validated by the growth of
+                our partners over long-term engagements.
+              </p>
+
+              <div className="grid grid-cols-2 gap-8">
+                <div className="border-l-2 border-slate-200 pl-6">
+                  <div className="text-4xl font-black text-slate-900">
+                    $2.4B+
+                  </div>
+                  <div className="text-sm text-slate-500 mt-2 uppercase tracking-wide">
+                    Client Capital Optimized
+                  </div>
+                </div>
+                <div className="border-l-2 border-slate-200 pl-6">
+                  <div className="text-4xl font-black text-slate-900">120%</div>
+                  <div className="text-sm text-slate-500 mt-2 uppercase tracking-wide">
+                    Avg. Efficiency Increase
+                  </div>
+                </div>
+                <div className="border-l-2 border-slate-200 pl-6">
+                  <div className="text-4xl font-black text-slate-900">45+</div>
+                  <div className="text-sm text-slate-500 mt-2 uppercase tracking-wide">
+                    Fortune 100 Partners
+                  </div>
+                </div>
+                <div className="border-l-2 border-slate-200 pl-6">
+                  <div className="text-4xl font-black text-slate-900">15+</div>
+                  <div className="text-sm text-slate-500 mt-2 uppercase tracking-wide">
+                    Industry Awards
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="bg-slate-900 rounded-[3rem] p-10 text-white shadow-2xl relative overflow-hidden">
+                <FaQuoteLeft
+                  className="text-5xl text-blue-500/30 mb-8"
+                  aria-hidden="true"
+                />
+                <blockquote className="text-2xl font-medium leading-relaxed italic mb-8 text-slate-200">
+                  "Nexus Strategy didn't just deliver a plan; they integrated
+                  into our culture and stayed through the execution phase. The
+                  $40M in operational savings we achieved was a direct result of
+                  their hands-on methodology."
+                </blockquote>
+
+                <div className="flex items-center gap-4">
+                  <img
+                    src="https://i.pravatar.cc/100?u=exec1"
+                    alt="Thomas Reed"
+                    className="w-14 h-14 rounded-full border-2 border-white/20"
+                  />
+                  <div className="text-sm">
+                    <h5 className="font-bold">Thomas Reed</h5>
+                    <p className="text-slate-400">COO, Global Logistics Corp</p>
+                  </div>
+                </div>
+
+                <div className="absolute -z-10 -bottom-8 -right-8 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="bg-slate-900 rounded-[4rem] p-12 lg:p-24 text-center text-white relative overflow-hidden">
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400 rounded-full blur-[100px] -mr-48 -mt-48" />
+            </div>
+
+            <div className="relative z-10 max-w-3xl mx-auto space-y-8">
+              <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">
+                Ready to be our next success story?
+              </h2>
+              <p className="text-xl text-slate-400 leading-relaxed">
+                Let's discuss how our strategic framework can be tailored to
+                solve your organization's most pressing challenges.
+              </p>
+
+              <div className="flex flex-wrap justify-center gap-6 pt-4">
+                <a
+                  href="/#contact"
+                  id="cta-start-project"
+                  className="px-10 py-5 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition-all flex items-center gap-3"
+                >
+                  Start a Partnership{" "}
+                  <FaArrowRight className="w-4 h-4" aria-hidden="true" />
+                </a>
+                <a
+                  href="/services"
+                  id="cta-learn-more"
+                  className="px-10 py-5 bg-white/5 border border-white/10 text-white font-bold rounded-2xl hover:bg-white/10 transition-all"
+                >
+                  Our Methodology
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
