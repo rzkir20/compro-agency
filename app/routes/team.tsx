@@ -4,11 +4,11 @@ import TeamComponent from "../team/team";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Team | Nexus Strategy" },
+    { title: "Team | Vertexa Strategy" },
     {
       name: "description",
       content:
-        "Meet the Nexus Strategy team of senior experts—driving strategic clarity and measurable outcomes for global organizations.",
+        "Meet the Vertexa Strategy team of senior experts—driving strategic clarity and measurable outcomes for global organizations.",
     },
   ];
 }

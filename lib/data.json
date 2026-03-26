@@ -1,0 +1,540 @@
+{
+  "workWithUs": {
+    "openings": [
+      {
+        "id": "apply-btn-1",
+        "category": "Strategy",
+        "categoryColor": "bg-blue-100 text-blue-600",
+        "details": "Full-time • New York / London",
+        "title": "Senior Strategic Consultant",
+        "description": "Lead high-impact projects for Fortune 500 clients, developing long-term roadmaps and identifying market opportunities."
+      },
+      {
+        "id": "apply-btn-2",
+        "category": "Digital",
+        "categoryColor": "bg-purple-100 text-purple-600",
+        "details": "Full-time • Remote (US/EU)",
+        "title": "Digital Transformation Advisor",
+        "description": "Guide organizations through cloud migrations, AI implementation, and modern operational architectures."
+      },
+      {
+        "id": "apply-btn-3",
+        "category": "Finance",
+        "categoryColor": "bg-emerald-100 text-emerald-600",
+        "details": "Full-time • Singapore / Tokyo",
+        "title": "Senior Financial Analyst",
+        "description": "Analyze complex capital structures, perform M&A due diligence, and architect financial risk frameworks."
+      },
+      {
+        "id": "apply-btn-4",
+        "category": "Operations",
+        "categoryColor": "bg-orange-100 text-orange-600",
+        "details": "Full-time • Berlin / Dubai",
+        "title": "Operations Excellence Manager",
+        "description": "Streamline supply chains and optimize global workflows using lean management and performance auditing."
+      }
+    ],
+    "journey": [
+      {
+        "step": "01",
+        "title": "Application & Review",
+        "description": "Submit your profile and portfolio. Our practice leads personally review every application within 48 hours."
+      },
+      {
+        "step": "02",
+        "title": "Strategic Discovery",
+        "description": "A 30-minute call to discuss your expertise, values, and how you see the future of consulting."
+      },
+      {
+        "step": "03",
+        "title": "Case Challenge",
+        "description": "Collaborate with our team on a real-world hypothetical scenario to showcase your problem-solving rigor."
+      },
+      {
+        "step": "04",
+        "title": "Partnership Offer",
+        "description": "A formal offer and comprehensive onboarding plan to ensure your immediate impact."
+      }
+    ],
+    "benefits": [
+      {
+        "icon": "stethoscope",
+        "title": "Comprehensive Health",
+        "description": "Top-tier medical, dental, and vision coverage for you and your family."
+      },
+      {
+        "icon": "graduationCap",
+        "title": "Growth Fund",
+        "description": "$5,000 annual budget for conferences, certifications, and advanced degrees."
+      },
+      {
+        "icon": "coffee",
+        "title": "Flexible Environments",
+        "description": "Choose between our global hubs or a remote setup that fits your lifestyle."
+      },
+      {
+        "icon": "chartBar",
+        "title": "Equity & Bonuses",
+        "description": "Competitive salary with performance bonuses and partnership equity options."
+      }
+    ]
+  },
+  "team": {
+    "leaders": [
+      {
+        "name": "Dr. Elena Vance",
+        "role": "Managing Director, Strategy",
+        "imageSrc": "https://i.pravatar.cc/800?u=a1",
+        "imageAlt": "Dr. Elena Vance",
+        "overlayText": "Expert in multi-market scaling and M&A integration with 20+ years of tenure.",
+        "badges": ["PhD Economics", "Former BCG Partner"]
+      },
+      {
+        "name": "Marcus Thorne",
+        "role": "Head of Digital Advisory",
+        "imageSrc": "https://i.pravatar.cc/800?u=a2",
+        "imageAlt": "Marcus Thorne",
+        "overlayText": "Digital pioneer focusing on AI implementation and cloud-native operational models.",
+        "badges": ["MIT Alumni", "Tech Innovator"]
+      },
+      {
+        "name": "Sarah Jenkins",
+        "role": "Financial Risk Partner",
+        "imageSrc": "https://i.pravatar.cc/800?u=a3",
+        "imageAlt": "Sarah Jenkins",
+        "overlayText": "Architect of complex financial risk models for Fortune 100 industrial firms.",
+        "badges": ["Wharton MBA", "CFA Charterholder"]
+      }
+    ],
+    "specialists": [
+      {
+        "name": "David Chen",
+        "role": "Sustainability Lead",
+        "imageSrc": "https://i.pravatar.cc/400?u=a4",
+        "imageAlt": "David Chen",
+        "tags": [
+          { "label": "ESG", "bgTextClassName": "bg-emerald-50 text-emerald-600" },
+          { "label": "Circular Econ", "bgTextClassName": "bg-emerald-50 text-emerald-600" }
+        ]
+      },
+      {
+        "name": "Amara Okafor",
+        "role": "Talent Strategy",
+        "imageSrc": "https://i.pravatar.cc/400?u=a5",
+        "imageAlt": "Amara Okafor",
+        "tags": [
+          { "label": "Culture", "bgTextClassName": "bg-blue-50 text-blue-600" },
+          { "label": "Leadership", "bgTextClassName": "bg-blue-50 text-blue-600" }
+        ]
+      },
+      {
+        "name": "Julian Voss",
+        "role": "Supply Chain Advisor",
+        "imageSrc": "https://i.pravatar.cc/400?u=a6",
+        "imageAlt": "Julian Voss",
+        "tags": [
+          { "label": "Lean", "bgTextClassName": "bg-blue-50 text-blue-600" },
+          { "label": "Logistics", "bgTextClassName": "bg-blue-50 text-blue-600" }
+        ]
+      },
+      {
+        "name": "Sofia Martinez",
+        "role": "Customer Experience",
+        "imageSrc": "https://i.pravatar.cc/400?u=a7",
+        "imageAlt": "Sofia Martinez",
+        "tags": [
+          { "label": "UX Design", "bgTextClassName": "bg-blue-50 text-blue-600" },
+          { "label": "Brand", "bgTextClassName": "bg-blue-50 text-blue-600" }
+        ]
+      }
+    ]
+  },
+  "portfolio": {
+    "caseStudies": [
+      {
+        "industry": "Fintech",
+        "outcomeLabel": "+35% Adoption",
+        "title": "Digital Banking Reimagined",
+        "description": "A major European bank overhauled its UX strategy, resulting in record-breaking engagement and 35% growth in digital services.",
+        "imageSrc": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
+        "imageAlt": "Banking Transformation"
+      },
+      {
+        "industry": "Logistics",
+        "outcomeLabel": "22% Lower Carbon",
+        "title": "Sustainable Supply Chain",
+        "description": "Optimizing a global logistics provider's network to reduce operational costs and environmental impact simultaneously.",
+        "imageSrc": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+        "imageAlt": "Logistics Optimization"
+      },
+      {
+        "industry": "Retail",
+        "outcomeLabel": "15 New Markets",
+        "title": "Unicorn Market Expansion",
+        "description": "Scaling a fast-growth tech brand from local presence to a dominant international player in under 2 years.",
+        "imageSrc": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
+        "imageAlt": "Market Entry"
+      },
+      {
+        "industry": "Tech",
+        "outcomeLabel": "ROI in 6 Months",
+        "title": "SaaS Product Pivot",
+        "description": "Restructuring a legacy software firm's product offering to a high-margin subscription model.",
+        "imageSrc": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=800",
+        "imageAlt": "Enterprise SaaS"
+      },
+      {
+        "industry": "Healthcare",
+        "outcomeLabel": "Patient Safety +40%",
+        "title": "Predictive Patient Care",
+        "description": "Implementing AI-driven analytics for a regional hospital network to improve patient outcomes and efficiency.",
+        "imageSrc": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800",
+        "imageAlt": "Healthcare Analytics"
+      },
+      {
+        "industry": "Energy",
+        "outcomeLabel": "Net Zero Path",
+        "title": "Net Zero Strategy 2030",
+        "description": "Developing a roadmap for a national utility company to transition 80% of its grid to renewables by 2030.",
+        "imageSrc": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
+        "imageAlt": "Energy Grid"
+      }
+    ]
+  },
+  "services": {
+    "overview": {
+      "paragraphs": [
+        "Our strategic planning service goes beyond traditional consulting. We don't just hand you a deck; we partner with your leadership to diagnose systemic challenges, identify untapped market potential, and architect a future-proof roadmap for your entire organization.",
+        "By combining quantitative market research with qualitative stakeholder alignment, we ensure your new strategy is not only ambitious but practically executable within your current cultural and operational context."
+      ],
+      "highlights": [
+        {
+          "icon": "trendingUp",
+          "title": "Growth Acceleration",
+          "description": "Unlock new revenue streams by identifying market gaps before your competitors do."
+        },
+        {
+          "icon": "shield",
+          "title": "Risk Mitigation",
+          "description": "Future-proof your business against economic shifts with resilient operational models."
+        }
+      ],
+      "deliverables": [
+        "3-Year Strategic Growth Roadmap",
+        "Comprehensive Market Analysis Report",
+        "Financial Projection & ROI Models",
+        "Competitor Benchmarking Matrix",
+        "Change Management Playbook",
+        "Executive Alignment Workshop"
+      ]
+    },
+    "engagementPackages": {
+      "heading": "Flexible Options for Every Stage",
+      "items": [
+        {
+          "id": "price-btn-1",
+          "name": "Growth Diagnostic",
+          "description": "Best for SMBs looking for a strategic health check and quick wins.",
+          "priceMain": "$12,500",
+          "priceSuffix": "/project",
+          "isFeatured": false,
+          "badgeText": "",
+          "features": [
+            { "text": "4-Week Engagement", "included": true },
+            { "text": "SWOT Analysis", "included": true },
+            { "text": "Market Gap Analysis", "included": true },
+            { "text": "Financial Projections", "included": false }
+          ],
+          "ctaLabel": "Get Started"
+        },
+        {
+          "id": "price-btn-2",
+          "name": "Standard Transformation",
+          "description": "Comprehensive 12-week program for scaling mid-market companies.",
+          "priceMain": "$35,000",
+          "priceSuffix": "/project",
+          "isFeatured": true,
+          "badgeText": "Most Popular",
+          "features": [
+            { "text": "10-Week Engagement", "included": true },
+            { "text": "Full Market Modeling", "included": true },
+            { "text": "3-Year Financials", "included": true },
+            { "text": "Board Presentation Deck", "included": true }
+          ],
+          "ctaLabel": "Schedule Call"
+        },
+        {
+          "id": "price-btn-3",
+          "name": "Enterprise Strategy",
+          "description": "Tailored solutions for global organizations with complex multi-market needs.",
+          "priceMain": "Custom",
+          "priceSuffix": " quote",
+          "isFeatured": false,
+          "badgeText": "",
+          "features": [
+            { "text": "Ongoing Retainer Options", "included": true },
+            { "text": "M&A Advisory", "included": true },
+            { "text": "Global Expansion Strategy", "included": true },
+            { "text": "Dedicated Partner Support", "included": true }
+          ],
+          "ctaLabel": "Contact Enterprise"
+        }
+      ]
+    }
+  },
+  "homePage": {
+    "home": {
+      "badge": "Global Strategy Experts",
+      "title": "Accelerating Growth for Forward Thinkers.",
+      "description": "We combine deep industry expertise with cutting-edge analytical tools to transform your business vision into measurable reality.",
+      "primaryCta": {
+        "label": "Book a Consultation",
+        "href": "#contact"
+      },
+      "secondaryCta": {
+        "label": "View Case Studies",
+        "href": "#portfolio"
+      },
+      "stats": [
+        { "value": "500+", "label": "Clients Served" },
+        { "value": "$2B+", "label": "Revenue Growth" },
+        { "value": "15+", "label": "Global Offices" }
+      ],
+      "heroImage": {
+        "src": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200",
+        "alt": "Professional Team"
+      },
+      "trustedBy": {
+        "avatars": [
+          "https://i.pravatar.cc/150?u=1",
+          "https://i.pravatar.cc/150?u=2",
+          "https://i.pravatar.cc/150?u=3"
+        ],
+        "text": "Trusted by 50+ Fortune 500"
+      }
+    },
+    "about": {
+      "badge": "Our Story",
+      "title": "Pioneering Excellence Since 2008",
+      "description": "Nexus Strategy was founded on a simple principle: complexity shouldn't hinder progress. We help organizations navigate the shifting tides of the global economy through data-driven insights and human-centric strategy.",
+      "highlights": [
+        {
+          "icon": "target",
+          "title": "Mission-Driven",
+          "description": "Empowering leaders with actionable clarity."
+        },
+        {
+          "icon": "zap",
+          "title": "Impact-First",
+          "description": "Measuring success by your tangible growth."
+        }
+      ],
+      "retention": {
+        "value": "98%",
+        "description": "Client retention rate over the last decade. We build partnerships, not just projects."
+      },
+      "images": [
+        {
+          "src": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600",
+          "alt": "Consulting 1",
+          "className": "w-full h-48 sm:h-64 object-cover rounded-2xl shadow-lg"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600",
+          "alt": "Consulting 2",
+          "className": "w-full h-40 sm:h-48 object-cover rounded-2xl shadow-lg"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600",
+          "alt": "Consulting 3",
+          "className": "w-full h-40 sm:h-48 object-cover rounded-2xl shadow-lg"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=600",
+          "alt": "Consulting 4",
+          "className": "w-full h-48 sm:h-64 object-cover rounded-2xl shadow-lg"
+        }
+      ]
+    },
+    "services": {
+      "badge": "What We Do",
+      "title": "Tailored Solutions for Complex Challenges",
+      "description": "We provide comprehensive consulting services that cover every aspect of your business lifecycle.",
+      "items": [
+        {
+          "icon": "trendingUp",
+          "title": "Strategic Planning",
+          "description": "Defining long-term roadmaps and identifying high-value opportunities in competitive markets.",
+          "features": ["Market Analysis", "Competitor Research"]
+        },
+        {
+          "icon": "barChart",
+          "title": "Financial Advisory",
+          "description": "Optimizing capital structures and providing rigorous financial oversight for sustainable growth.",
+          "features": ["Mergers & Acquisitions", "Risk Management"]
+        },
+        {
+          "icon": "monitor",
+          "title": "Digital Transformation",
+          "description": "Integrating modern technology into all areas of business to improve operations and value.",
+          "features": ["Cloud Infrastructure", "AI Integration"]
+        },
+        {
+          "icon": "users",
+          "title": "Operations Excellence",
+          "description": "Streamlining workflows and supply chains to enhance efficiency and reduce overhead.",
+          "features": ["Lean Management", "Performance Audits"]
+        },
+        {
+          "icon": "globe",
+          "title": "Sustainability Strategy",
+          "description": "Helping firms transition to greener practices while maintaining profitability and compliance.",
+          "features": ["ESG Reporting", "Carbon Footprint"]
+        },
+        {
+          "icon": "briefcase",
+          "title": "Human Capital",
+          "description": "Developing talent management systems and leadership programs for the modern workforce.",
+          "features": ["Talent Acquisition", "Corporate Culture"]
+        }
+      ]
+    },
+    "portfolio": {
+      "badge": "Success Stories",
+      "title": "Case Studies of Impact",
+      "description": "Discover how we've helped leading global organizations achieve their most ambitious goals.",
+      "items": [
+        {
+          "tag": "Fintech Integration",
+          "title": "Reimagining Retail Banking",
+          "description": "A 35% increase in digital adoption for a leading European bank through strategic UX overhaul.",
+          "imageSrc": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
+          "imageAlt": "Case Study 1"
+        },
+        {
+          "tag": "Operations",
+          "title": "Sustainable Supply Chain",
+          "description": "Reducing carbon footprint by 22% while increasing net margins for a global logistics provider.",
+          "imageSrc": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+          "imageAlt": "Case Study 2"
+        },
+        {
+          "tag": "Human Capital",
+          "title": "Transforming Workforce Performance",
+          "description": "Rebuilding talent strategy and leadership coaching to improve employee retention by 28% across 6 regional offices.",
+          "imageSrc": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
+          "imageAlt": "Case Study 4"
+        },
+        {
+          "tag": "Scaling",
+          "title": "Global Market Entry",
+          "description": "Scaling a tech unicorn from local presence to 15 international markets in under 24 months.",
+          "imageSrc": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
+          "imageAlt": "Case Study 3"
+        }
+      ]
+    },
+    "team": {
+      "badge": "The Minds Behind Nexus",
+      "title": "World-Class Experts Dedicated to Your Vision",
+      "joinLabel": "Join our leadership team",
+      "members": [
+        {
+          "name": "Dr. Elena Vance",
+          "role": "Managing Director, Strategy",
+          "imageSrc": "https://i.pravatar.cc/400?u=a1",
+          "imageAlt": "Team Member"
+        },
+        {
+          "name": "Marcus Thorne",
+          "role": "Head of Digital Advisory",
+          "imageSrc": "https://i.pravatar.cc/400?u=a2",
+          "imageAlt": "Team Member"
+        },
+        {
+          "name": "Sarah Jenkins",
+          "role": "Financial Risk Partner",
+          "imageSrc": "https://i.pravatar.cc/400?u=a3",
+          "imageAlt": "Team Member"
+        },
+        {
+          "name": "David Chen",
+          "role": "Sustainability Consultant",
+          "imageSrc": "https://i.pravatar.cc/400?u=a4",
+          "imageAlt": "Team Member"
+        }
+      ]
+    }
+  },
+  "about": {
+    "values": [
+      {
+        "icon": "award",
+        "title": "Relentless Excellence",
+        "description": "We hold ourselves to the highest standards, ensuring every deliverable exceeds expectations."
+      },
+      {
+        "icon": "shield",
+        "title": "Radical Candor",
+        "description": "Honesty is our policy. We tell our clients what they need to hear, not just what they want to hear."
+      },
+      {
+        "icon": "zap",
+        "title": "Agile Innovation",
+        "description": "The world changes fast; so do we. We adapt our strategies to the latest market signals."
+      },
+      {
+        "icon": "users",
+        "title": "Collective Impact",
+        "description": "We believe in the power of diverse perspectives coming together to solve complex problems."
+      }
+    ],
+    "journey": [
+      {
+        "year": "2008",
+        "title": "The Foundation",
+        "description": "Nexus launched in NYC with a small team focused on financial restructuring.",
+        "offsetClassName": "lg:mb-12"
+      },
+      {
+        "year": "2013",
+        "title": "Going Global",
+        "description": "Opened the London office and expanded into European market strategy.",
+        "offsetClassName": "lg:mt-12"
+      },
+      {
+        "year": "2018",
+        "title": "Tech Evolution",
+        "description": "Launched our Digital Transformation wing to address the shift to cloud and AI.",
+        "offsetClassName": "lg:mb-12"
+      },
+      {
+        "year": "2024",
+        "title": "The Future",
+        "description": "Reached the milestone of $2B in client revenue growth generated.",
+        "offsetClassName": "lg:mt-12"
+      }
+    ],
+    "stats": [
+      { "key": "clients", "label": "Clients Worldwide", "value": 500, "prefix": "", "suffix": "+", "isCurrency": false },
+      { "key": "offices", "label": "Global Offices", "value": 15, "prefix": "", "suffix": "+", "isCurrency": false },
+      { "key": "experts", "label": "Senior Experts", "value": 200, "prefix": "", "suffix": "+", "isCurrency": false },
+      { "key": "revenue", "label": "Revenue Impact", "value": 2, "prefix": "$", "suffix": "B+", "isCurrency": true }
+    ],
+    "presence": {
+      "heading": "Strategically Located for Global Reach",
+      "offices": [
+        { "city": "New York", "type": "Global Headquarters", "address": "1221 Avenue of the Americas", "phone": "+1 (212) 555-0123" },
+        { "city": "London", "type": "EMEA Hub", "address": "30 St Mary Axe, Canary Wharf", "phone": "+44 (20) 7946 0123" },
+        { "city": "Singapore", "type": "APAC Regional Office", "address": "8 Marina Blvd, Financial Center", "phone": "+65 6789 0123" },
+        { "city": "Dubai", "type": "Middle East HQ", "address": "DIFC Precinct Building 4", "phone": "+971 4 123 4567" }
+      ]
+    },
+    "recognitions": [
+      { "icon": "award", "label": "Best Consultancies 2023" },
+      { "icon": "shield", "label": "Strategic Partner Award" },
+      { "icon": "target", "label": "Case Study of Year" },
+      { "icon": "zap", "label": "Top 50 Innovators" }
+    ]
+  }
+}

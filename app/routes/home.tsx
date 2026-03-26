@@ -4,7 +4,7 @@ import Welcome from "../home/home";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Nexus Strategy | Premium Business Consulting" },
+    { title: "Vertexa Strategy | Premium Business Consulting" },
     {
       name: "description",
       content:

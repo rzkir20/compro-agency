@@ -4,11 +4,11 @@ import PortofolioComponent from "../portofolio/portofolio";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Portfolio | Nexus Strategy" },
+    { title: "Portfolio | Vertexa Strategy" },
     {
       name: "description",
       content:
-        "Explore Nexus Strategy's portfolio of measurable outcomes—partnering with global leaders to navigate disruption and unlock sustainable growth.",
+        "Explore Vertexa Strategy's portfolio of measurable outcomes—partnering with global leaders to navigate disruption and unlock sustainable growth.",
     },
   ];
 }

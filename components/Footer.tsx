@@ -7,22 +7,24 @@ import {
 
 import { FiLayers } from "react-icons/fi";
 
+import { Link } from "react-router";
+
 export default function Footer() {
   return (
     <footer className="bg-slate-50 border-t border-slate-200 pt-20 pb-10">
-      <div className="container mx-auto px-6">
+      <div className="max-w-full-sm xl:container mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
-            <a
-              href="#"
+            <Link
+              to="/"
               id="footer-logo-link"
               className="flex items-center gap-2"
             >
               <div className="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center">
                 <FiLayers className="text-white text-lg" />
               </div>
-              <span className="text-lg font-bold text-slate-900">NEXUS</span>
-            </a>
+              <span className="text-lg font-bold text-slate-900">Vertexa</span>
+            </Link>
             <p className="text-slate-500 text-sm leading-relaxed">
               The global standard in strategic business consulting. Transforming
               complex challenges into sustainable growth since 2008.
@@ -82,24 +84,24 @@ export default function Footer() {
             <h4 className="font-bold text-slate-900 mb-6">Company</h4>
             <ul className="space-y-4 text-sm text-slate-500">
               <li className="hover:text-blue-600 transition-colors">
-                <a href="#" id="f-comp-1">
+                <Link to="/about" id="f-comp-1">
                   About Us
-                </a>
+                </Link>
               </li>
               <li className="hover:text-blue-600 transition-colors">
-                <a href="#" id="f-comp-2">
+                <Link to="/portofolio" id="f-comp-2">
                   Our Portfolio
-                </a>
+                </Link>
               </li>
               <li className="hover:text-blue-600 transition-colors">
-                <a href="#" id="f-comp-3">
+                <Link to="/team" id="f-comp-3">
                   Leadership Team
-                </a>
+                </Link>
               </li>
               <li className="hover:text-blue-600 transition-colors">
-                <a href="#" id="f-comp-4">
+                <Link to="/work-with-us" id="f-comp-4">
                   Careers
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -123,7 +125,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-          <p>© 2024 Nexus Strategic Consulting LLC. All rights reserved.</p>
+          <p>© 2026 Space Digitalia. All rights reserved.</p>
           <div className="flex gap-8">
             <a href="#" id="f-legal-1" className="hover:text-slate-900">
               Privacy Policy

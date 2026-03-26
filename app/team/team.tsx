@@ -2,107 +2,13 @@ import React from "react";
 
 import { FaArrowRight, FaLinkedin, FaTwitter } from "react-icons/fa";
 
-type Leader = {
-  name: string;
-  role: string;
-  imageSrc: string;
-  imageAlt: string;
-  overlayText: string;
-  badges: string[];
-};
+import data from "../../lib/data.json";
 
-type Specialist = {
-  name: string;
-  role: string;
-  imageSrc: string;
-  imageAlt: string;
-  tags: Array<{
-    label: string;
-    bgTextClassName: string;
-  }>;
-};
+const teamData = (data as TeamData).team;
 
-const LEADERS: Leader[] = [
-  {
-    name: "Dr. Elena Vance",
-    role: "Managing Director, Strategy",
-    imageSrc: "https://i.pravatar.cc/800?u=a1",
-    imageAlt: "Dr. Elena Vance",
-    overlayText:
-      "Expert in multi-market scaling and M&A integration with 20+ years of tenure.",
-    badges: ["PhD Economics", "Former BCG Partner"],
-  },
-  {
-    name: "Marcus Thorne",
-    role: "Head of Digital Advisory",
-    imageSrc: "https://i.pravatar.cc/800?u=a2",
-    imageAlt: "Marcus Thorne",
-    overlayText:
-      "Digital pioneer focusing on AI implementation and cloud-native operational models.",
-    badges: ["MIT Alumni", "Tech Innovator"],
-  },
-  {
-    name: "Sarah Jenkins",
-    role: "Financial Risk Partner",
-    imageSrc: "https://i.pravatar.cc/800?u=a3",
-    imageAlt: "Sarah Jenkins",
-    overlayText:
-      "Architect of complex financial risk models for Fortune 100 industrial firms.",
-    badges: ["Wharton MBA", "CFA Charterholder"],
-  },
-];
+const LEADERS = teamData.leaders;
 
-const SPECIALISTS: Specialist[] = [
-  {
-    name: "David Chen",
-    role: "Sustainability Lead",
-    imageSrc: "https://i.pravatar.cc/400?u=a4",
-    imageAlt: "David Chen",
-    tags: [
-      { label: "ESG", bgTextClassName: "bg-emerald-50 text-emerald-600" },
-      {
-        label: "Circular Econ",
-        bgTextClassName: "bg-emerald-50 text-emerald-600",
-      },
-    ],
-  },
-  {
-    name: "Amara Okafor",
-    role: "Talent Strategy",
-    imageSrc: "https://i.pravatar.cc/400?u=a5",
-    imageAlt: "Amara Okafor",
-    tags: [
-      { label: "Culture", bgTextClassName: "bg-blue-50 text-blue-600" },
-      {
-        label: "Leadership",
-        bgTextClassName: "bg-blue-50 text-blue-600",
-      },
-    ],
-  },
-  {
-    name: "Julian Voss",
-    role: "Supply Chain Advisor",
-    imageSrc: "https://i.pravatar.cc/400?u=a6",
-    imageAlt: "Julian Voss",
-    tags: [
-      { label: "Lean", bgTextClassName: "bg-blue-50 text-blue-600" },
-      {
-        label: "Logistics",
-        bgTextClassName: "bg-blue-50 text-blue-600",
-      },
-    ],
-  },
-  {
-    name: "Sofia Martinez",
-    role: "Customer Experience",
-    imageSrc: "https://i.pravatar.cc/400?u=a7",
-    imageAlt: "Sofia Martinez",
-    tags: [
-      { label: "UX Design", bgTextClassName: "bg-blue-50 text-blue-600" },
-      { label: "Brand", bgTextClassName: "bg-blue-50 text-blue-600" },
-    ],
-  },
-];
+const SPECIALISTS = teamData.specialists;
 
 export default function Team() {
   return (
@@ -118,7 +24,7 @@ export default function Team() {
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500 rounded-full blur-[120px] -mr-48 -mt-48" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <div className="max-w-full-sm xl:container mx-auto px-6 relative z-10 text-center">
           <span className="text-blue-400 font-bold uppercase tracking-widest text-sm mb-4 block">
             Our People
           </span>
@@ -133,8 +39,8 @@ export default function Team() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-10 xl:py-20 bg-white">
+        <div className="max-w-full-sm xl:container mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-16 border-b border-slate-100 pb-8">
             <div>
               <h2 className="text-3xl font-bold text-slate-900 tracking-tight">
@@ -225,8 +131,8 @@ export default function Team() {
         </div>
       </section>
 
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-6">
+      <section className="py-10 xl:py-20 bg-slate-50">
+        <div className="max-w-full-sm xl:container mx-auto px-6">
           <div className="mb-16 border-b border-slate-200 pb-8">
             <h2 className="text-3xl font-bold text-slate-900 tracking-tight">
               Senior Consultants &amp; Specialists
@@ -267,24 +173,24 @@ export default function Team() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="bg-slate-900 rounded-[3rem] p-12 lg:p-20 flex flex-col lg:flex-row items-center gap-12">
-            <div className="flex-1 space-y-6 text-white text-center lg:text-left">
-              <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">
+      <section className="py-10 xl:py-20 bg-white">
+        <div className="max-w-full-sm xl:container mx-auto px-6">
+          <div className="bg-slate-900 rounded-4xl sm:rounded-[2.5rem] lg:rounded-[3rem] p-6 sm:p-8 lg:p-14 xl:p-20 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+            <div className="flex-1 space-y-5 sm:space-y-6 text-white text-center lg:text-left w-full">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
                 Want to work with our experts?
               </h2>
-              <p className="text-xl text-slate-400">
+              <p className="text-base sm:text-lg xl:text-xl text-slate-400 leading-relaxed">
                 Our team doesn&apos;t just provide answers; we solve your
                 specific organizational puzzles side-by-side with your
                 leadership.
               </p>
 
-              <div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start pt-2 sm:pt-4 w-full">
                 <a
                   href="https://draft-9c5e3558-be36-491f-8d3d-580fe354ad56.preview.superdesign.dev"
                   id="team-cta-btn"
-                  className="px-8 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all flex items-center gap-2"
+                  className="w-full sm:w-auto justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all flex items-center gap-2"
                 >
                   Schedule a Deep-Dive Call{" "}
                   <FaArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -292,38 +198,46 @@ export default function Team() {
                 <a
                   href="#"
                   id="team-cta-careers"
-                  className="px-8 py-4 bg-white/5 border border-white/10 text-white font-bold rounded-xl hover:bg-white/10 transition-all"
+                  className="w-full sm:w-auto text-center px-6 sm:px-8 py-3.5 sm:py-4 bg-white/5 border border-white/10 text-white font-bold rounded-xl hover:bg-white/10 transition-all"
                 >
                   Join Our Global Network
                 </a>
               </div>
             </div>
 
-            <div className="flex-1 grid grid-cols-2 gap-4">
+            <div className="flex-1 w-full max-w-md lg:max-w-none grid grid-cols-2 gap-3 sm:gap-4">
               <div className="space-y-4">
-                <div className="p-6 bg-white/5 rounded-2xl border border-white/10 text-center">
-                  <div className="text-3xl font-bold text-white mb-1">15+</div>
+                <div className="p-4 sm:p-6 bg-white/5 rounded-2xl border border-white/10 text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
+                    15+
+                  </div>
                   <div className="text-xs text-slate-400 uppercase tracking-widest font-bold">
                     Senior Partners
                   </div>
                 </div>
-                <div className="p-6 bg-white/5 rounded-2xl border border-white/10 text-center">
-                  <div className="text-3xl font-bold text-white mb-1">12</div>
+                <div className="p-4 sm:p-6 bg-white/5 rounded-2xl border border-white/10 text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
+                    12
+                  </div>
                   <div className="text-xs text-slate-400 uppercase tracking-widest font-bold">
                     Nationalities
                   </div>
                 </div>
               </div>
 
-              <div className="space-y-4 pt-8">
-                <div className="p-6 bg-white/5 rounded-2xl border border-white/10 text-center">
-                  <div className="text-3xl font-bold text-white mb-1">40+</div>
+              <div className="space-y-4 pt-6 sm:pt-8">
+                <div className="p-4 sm:p-6 bg-white/5 rounded-2xl border border-white/10 text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
+                    40+
+                  </div>
                   <div className="text-xs text-slate-400 uppercase tracking-widest font-bold">
                     Specialists
                   </div>
                 </div>
-                <div className="p-6 bg-white/5 rounded-2xl border border-white/10 text-center">
-                  <div className="text-3xl font-bold text-white mb-1">100%</div>
+                <div className="p-4 sm:p-6 bg-white/5 rounded-2xl border border-white/10 text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
+                    100%
+                  </div>
                   <div className="text-xs text-slate-400 uppercase tracking-widest font-bold">
                     Dedication
                   </div>

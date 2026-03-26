@@ -2,77 +2,9 @@ import React from "react";
 
 import { FaArrowRight, FaQuoteLeft, FaTrophy } from "react-icons/fa";
 
-type CaseStudy = {
-  industry: string;
-  outcomeLabel: string;
-  title: string;
-  description: string;
-  imageSrc: string;
-  imageAlt: string;
-};
+import data from "../../lib/data.json";
 
-const CASE_STUDIES: CaseStudy[] = [
-  {
-    industry: "Fintech",
-    outcomeLabel: "+35% Adoption",
-    title: "Digital Banking Reimagined",
-    description:
-      "A major European bank overhauled its UX strategy, resulting in record-breaking engagement and 35% growth in digital services.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
-    imageAlt: "Banking Transformation",
-  },
-  {
-    industry: "Logistics",
-    outcomeLabel: "22% Lower Carbon",
-    title: "Sustainable Supply Chain",
-    description:
-      "Optimizing a global logistics provider's network to reduce operational costs and environmental impact simultaneously.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-    imageAlt: "Logistics Optimization",
-  },
-  {
-    industry: "Retail",
-    outcomeLabel: "15 New Markets",
-    title: "Unicorn Market Expansion",
-    description:
-      "Scaling a fast-growth tech brand from local presence to a dominant international player in under 2 years.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
-    imageAlt: "Market Entry",
-  },
-  {
-    industry: "Tech",
-    outcomeLabel: "ROI in 6 Months",
-    title: "SaaS Product Pivot",
-    description:
-      "Restructuring a legacy software firm's product offering to a high-margin subscription model.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=800",
-    imageAlt: "Enterprise SaaS",
-  },
-  {
-    industry: "Healthcare",
-    outcomeLabel: "Patient Safety +40%",
-    title: "Predictive Patient Care",
-    description:
-      "Implementing AI-driven analytics for a regional hospital network to improve patient outcomes and efficiency.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800",
-    imageAlt: "Healthcare Analytics",
-  },
-  {
-    industry: "Energy",
-    outcomeLabel: "Net Zero Path",
-    title: "Net Zero Strategy 2030",
-    description:
-      "Developing a roadmap for a national utility company to transition 80% of its grid to renewables by 2030.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
-    imageAlt: "Energy Grid",
-  },
-];
+const CASE_STUDIES = (data as PortfolioData).portfolio.caseStudies;
 
 export default function Portfolio() {
   return (
@@ -86,7 +18,7 @@ export default function Portfolio() {
           <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-slate-400 rounded-full blur-[100px] -ml-48 -mb-48" />
         </div>
 
-        <div className="container mx-auto px-6 relative z-10 text-center">
+        <div className="max-w-full-sm xl:container mx-auto px-6 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
             <FaTrophy className="w-4 h-4" aria-hidden="true" />
             Excellence in Execution
@@ -102,8 +34,8 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section className="py-10 border-b border-slate-100 bg-white sticky top-20 z-40">
-        <div className="container mx-auto px-6 flex flex-wrap items-center justify-center gap-4">
+      <section className="py-4 md:py-10 border-b border-slate-100 bg-white sticky top-20 z-40">
+        <div className="max-w-full-sm xl:container mx-auto px-6 flex flex-wrap items-center justify-center gap-4">
           <button
             id="filter-all"
             className="px-6 py-2 rounded-full bg-slate-900 text-white text-sm font-bold transition-all"
@@ -142,8 +74,8 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section className="py-20 bg-white" id="portfolio">
-        <div className="container mx-auto px-6">
+      <section className="py-10 xl:py-20 bg-white" id="portfolio">
+        <div className="max-w-full-sm xl:container mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {CASE_STUDIES.map((c) => (
               <div
@@ -192,8 +124,8 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-6">
+      <section className="py-10 xl:py-20 bg-slate-50">
+        <div className="max-w-full-sm xl:container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">
@@ -270,8 +202,8 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-10 xl:py-20 bg-white">
+        <div className="max-w-full-sm xl:container mx-auto px-6">
           <div className="bg-slate-900 rounded-[4rem] p-12 lg:p-24 text-center text-white relative overflow-hidden">
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400 rounded-full blur-[100px] -mr-48 -mt-48" />

@@ -4,7 +4,7 @@ import ServicesComponent from "../services/services";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Services | Nexus Strategy" },
+    { title: "Services | Vertexa Strategy" },
     {
       name: "description",
       content:
