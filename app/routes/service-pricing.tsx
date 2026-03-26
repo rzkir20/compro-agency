@@ -4,7 +4,7 @@ import type { Route } from "./+types/home";
 
 import { useParams } from "react-router";
 
-import ServicePricingPage from "../services/service-pricing-page";
+import ServicePricingPage from "../services/details/pricing/service-pricing-page";
 import { slugifyServiceTitle } from "../../lib/service-slug";
 
 import data from "../../lib/data.json";

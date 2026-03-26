@@ -3,61 +3,36 @@ import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
 
 import {
-  FiCalendar,
   FiCheckCircle,
   FiChevronLeft,
   FiChevronRight,
   FiInfo,
 } from "react-icons/fi";
 
-import data from "../../lib/data.json";
-import { slugifyServiceTitle } from "../../lib/service-slug";
+import { useNavigate } from "react-router";
 
-type MeetingFormat = "virtual" | "in-person";
+import { slugifyServiceTitle } from "../../../../../lib/service-slug";
 
-const TIMES = [
-  "09:00 AM",
-  "10:30 AM",
-  "11:00 AM",
-  "01:30 PM",
-  "03:00 PM",
-  "04:30 PM",
-];
+import { TIMES } from "../../../../../lib/helper";
+
+import {
+  buildBookingConfirmedSearch,
+  generateBookingId,
+  getScheduleConsultants,
+  requireServiceBySlug,
+  useServiceScheduleState,
+} from "../../../../../service/services.service";
 
 export default function ServiceSchedulePage({ slug }: { slug?: string }) {
-  const homePageData = (data as HomePageData).homePage;
-  const teamData = (data as TeamData).team;
-
-  const service = slug
-    ? homePageData.services.items.find(
-        (s) => slugifyServiceTitle(s.title) === slug,
-      )
-    : undefined;
-
-  if (!service) {
-    throw new Response("Service not found", { status: 404 });
-  }
-
-  const consultants = teamData.leaders.slice(0, 2).map((c) => ({
-    name: c.name,
-    roleLabel: c.role,
-    imageSrc: c.imageSrc,
-    imageAlt: c.imageAlt,
-  }));
-
-  const [selectedConsultant, setSelectedConsultant] = React.useState(
-    consultants[0]?.name,
-  );
-  const [selectedDay, setSelectedDay] = React.useState<number>(10);
-  const [selectedTime, setSelectedTime] = React.useState<string>("10:30 AM");
-  const [meetingFormat, setMeetingFormat] =
-    React.useState<MeetingFormat>("virtual");
-  const [notes, setNotes] = React.useState("");
+  const navigate = useNavigate();
+  const service = requireServiceBySlug(slug);
+  const consultants = getScheduleConsultants(2);
+  const schedule = useServiceScheduleState(consultants[0]?.name);
 
   return (
     <main
       style={{ viewTransitionName: "main-content" } as React.CSSProperties}
-      className="grow pt-32 pb-24 bg-slate-50"
+      className="grow pt-32 pb-10 bg-slate-50"
     >
       <div className="max-w-full-sm xl:container mx-auto px-6">
         <div className="mb-12 text-center lg:text-left">
@@ -89,7 +64,7 @@ export default function ServiceSchedulePage({ slug }: { slug?: string }) {
 
                 <div className="grid md:grid-cols-2 gap-4">
                   {consultants.map((c) => {
-                    const selected = selectedConsultant === c.name;
+                    const selected = schedule.selectedConsultant === c.name;
                     return (
                       <label
                         key={c.name}
@@ -105,7 +80,9 @@ export default function ServiceSchedulePage({ slug }: { slug?: string }) {
                           name="consultant"
                           className="hidden"
                           checked={selected}
-                          onChange={() => setSelectedConsultant(c.name)}
+                          onChange={() =>
+                            schedule.setSelectedConsultant(c.name)
+                          }
                         />
                         <img
                           src={c.imageSrc}
@@ -170,7 +147,7 @@ export default function ServiceSchedulePage({ slug }: { slug?: string }) {
                     17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
                   ].map((day, idx) => {
                     const isMuted = idx === 0;
-                    const selected = day === selectedDay && !isMuted;
+                    const selected = day === schedule.selectedDay && !isMuted;
                     return (
                       <button
                         key={`${day}-${idx}`}
@@ -186,7 +163,7 @@ export default function ServiceSchedulePage({ slug }: { slug?: string }) {
                         ].join(" ")}
                         onClick={() => {
                           if (isMuted) return;
-                          setSelectedDay(day);
+                          schedule.setSelectedDay(day);
                         }}
                         aria-pressed={selected}
                       >
@@ -206,7 +183,7 @@ export default function ServiceSchedulePage({ slug }: { slug?: string }) {
               </h3>
               <div className="grid grid-cols-2 gap-3">
                 {TIMES.map((t) => {
-                  const selected = selectedTime === t;
+                  const selected = schedule.selectedTime === t;
                   return (
                     <button
                       key={t}
@@ -217,7 +194,7 @@ export default function ServiceSchedulePage({ slug }: { slug?: string }) {
                           ? "bg-blue-600 border-blue-600 text-white"
                           : "border-slate-200 text-slate-600 hover:border-blue-600 hover:text-blue-600",
                       ].join(" ")}
-                      onClick={() => setSelectedTime(t)}
+                      onClick={() => schedule.setSelectedTime(t)}
                       aria-pressed={selected}
                     >
                       {t}
@@ -236,11 +213,11 @@ export default function ServiceSchedulePage({ slug }: { slug?: string }) {
                       type="button"
                       className={[
                         "flex-1 py-2 rounded-lg text-sm font-bold transition-all",
-                        meetingFormat === "virtual"
+                        schedule.meetingFormat === "virtual"
                           ? "bg-white shadow-sm text-slate-900"
                           : "text-slate-500 hover:text-slate-700",
                       ].join(" ")}
-                      onClick={() => setMeetingFormat("virtual")}
+                      onClick={() => schedule.setMeetingFormat("virtual")}
                     >
                       Virtual
                     </button>
@@ -248,11 +225,11 @@ export default function ServiceSchedulePage({ slug }: { slug?: string }) {
                       type="button"
                       className={[
                         "flex-1 py-2 rounded-lg text-sm font-bold transition-all",
-                        meetingFormat === "in-person"
+                        schedule.meetingFormat === "in-person"
                           ? "bg-white shadow-sm text-slate-900"
                           : "text-slate-500 hover:text-slate-700",
                       ].join(" ")}
-                      onClick={() => setMeetingFormat("in-person")}
+                      onClick={() => schedule.setMeetingFormat("in-person")}
                     >
                       In-Person
                     </button>
@@ -267,8 +244,8 @@ export default function ServiceSchedulePage({ slug }: { slug?: string }) {
                     rows={4}
                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm"
                     placeholder="Describe your business challenges..."
-                    value={notes}
-                    onChange={(e) => setNotes(e.target.value)}
+                    value={schedule.notes}
+                    onChange={(e) => schedule.setNotes(e.target.value)}
                   />
                 </div>
 
@@ -278,7 +255,17 @@ export default function ServiceSchedulePage({ slug }: { slug?: string }) {
                   className="w-full py-4 bg-slate-900 text-white text-center font-bold rounded-xl hover:bg-slate-800 transition-all flex items-center justify-center gap-2"
                   onClick={(e) => {
                     e.preventDefault();
-                    window.location.assign("/#contact");
+                    const id = generateBookingId("NX");
+                    const search = buildBookingConfirmedSearch({
+                      id,
+                      consultant: schedule.selectedConsultant ?? "",
+                      day: schedule.selectedDay,
+                      time: schedule.selectedTime,
+                      format: schedule.meetingFormat,
+                    });
+                    navigate(
+                      `/services/${slugifyServiceTitle(service.title)}/schedule/confirmed${search}`,
+                    );
                   }}
                 >
                   Confirm Appointment
@@ -333,8 +320,8 @@ export default function ServiceSchedulePage({ slug }: { slug?: string }) {
         </div>
 
         <div className="sr-only" aria-hidden="true">
-          {selectedConsultant} {selectedDay} {selectedTime} {meetingFormat}{" "}
-          {notes}
+          {schedule.selectedConsultant} {schedule.selectedDay}{" "}
+          {schedule.selectedTime} {schedule.meetingFormat} {schedule.notes}
         </div>
       </div>
     </main>

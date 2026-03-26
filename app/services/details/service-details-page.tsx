@@ -4,20 +4,32 @@ import { FaRegCheckCircle } from "react-icons/fa";
 
 import { FiChevronRight } from "react-icons/fi";
 
-import data from "../../lib/data.json";
-import { slugifyServiceTitle } from "../../lib/service-slug";
+import { slugifyServiceTitle } from "../../../lib/service-slug";
+
+import {
+  getServiceDetailsDefaults,
+  requireServiceBySlug,
+} from "../../../service/services.service";
 
 export default function ServiceDetailsPage({ slug }: { slug?: string }) {
-  const homePageData = (data as HomePageData).homePage;
-  const service = slug
-    ? homePageData.services.items.find(
-        (s) => slugifyServiceTitle(s.title) === slug,
-      )
-    : undefined;
+  const service = requireServiceBySlug(slug);
+  const detailsDefaults = getServiceDetailsDefaults();
 
-  if (!service) {
-    throw new Response("Service not found", { status: 404 });
-  }
+  const safeDescription =
+    service.description && service.description.trim().length > 0
+      ? service.description
+      : detailsDefaults.description;
+
+  const safeFeatures =
+    Array.isArray(service.features) && service.features.length > 0
+      ? service.features
+      : detailsDefaults.features;
+
+  const safeDeliverables = detailsDefaults.deliverables;
+
+  const safeProcess = detailsDefaults.process;
+
+  const safeOutcomes = detailsDefaults.outcomes;
 
   return (
     <main
@@ -51,7 +63,7 @@ export default function ServiceDetailsPage({ slug }: { slug?: string }) {
               {service.title}
             </h1>
             <p className="text-xl text-slate-300 leading-relaxed">
-              {service.description}
+              {safeDescription}
             </p>
 
             <div className="flex items-center gap-6 pt-4 flex-wrap">
@@ -73,7 +85,7 @@ export default function ServiceDetailsPage({ slug }: { slug?: string }) {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="xl:py-20 py-10 bg-white">
         <div className="max-w-full-sm xl:container mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-16">
             <div className="lg:col-span-2 space-y-10">
@@ -92,7 +104,7 @@ export default function ServiceDetailsPage({ slug }: { slug?: string }) {
                   Included highlights
                 </h3>
                 <ul className="space-y-3 text-slate-600">
-                  {service.features.map((feature) => (
+                  {safeFeatures.map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
                       <FaRegCheckCircle className="w-5 h-5 text-blue-600" />
                       <span>{feature}</span>
@@ -118,6 +130,91 @@ export default function ServiceDetailsPage({ slug }: { slug?: string }) {
                 </a>
               </div>
             </aside>
+          </div>
+        </div>
+      </section>
+
+      <section className="xl:py-20 py-10 bg-slate-50 border-t border-slate-100">
+        <div className="max-w-full-sm xl:container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-10 items-start">
+            <div className="space-y-3">
+              <h2 className="text-3xl font-bold text-slate-900">
+                Deliverables
+              </h2>
+              <p className="text-slate-600 text-lg leading-relaxed">
+                Concrete outputs you can share, use, and execute—designed to
+                reduce ambiguity and accelerate decisions.
+              </p>
+            </div>
+
+            <div className="p-8 bg-white border border-slate-200 rounded-2xl">
+              <ul className="space-y-3 text-slate-600">
+                {safeDeliverables.map((item) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <FaRegCheckCircle className="w-5 h-5 text-blue-600" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="xl:py-20 py-10 bg-white">
+        <div className="max-w-full-sm xl:container mx-auto px-6">
+          <div className="flex flex-wrap items-end justify-between gap-6 mb-10">
+            <div className="max-w-2xl space-y-3">
+              <h2 className="text-3xl font-bold text-slate-900">
+                How it works
+              </h2>
+              <p className="text-slate-600 text-lg leading-relaxed">
+                A simple, repeatable engagement flow—built to create momentum
+                quickly and end with decision-ready outputs.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-6">
+            {safeProcess.map((item) => (
+              <div
+                key={item.step}
+                className="p-8 rounded-2xl bg-slate-50 border border-slate-100"
+              >
+                <div className="text-sm font-bold text-blue-600">
+                  {item.step}
+                </div>
+                <h3 className="mt-2 font-bold text-slate-900">{item.title}</h3>
+                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="xl:py-20 py-10 bg-slate-900">
+        <div className="max-w-full-sm xl:container mx-auto px-6 text-white">
+          <div className="grid lg:grid-cols-2 gap-10 items-start">
+            <div className="space-y-3">
+              <h2 className="text-3xl font-bold">Expected outcomes</h2>
+              <p className="text-slate-300 text-lg leading-relaxed">
+                What you should walk away with—clear, measurable, and aligned to
+                execution.
+              </p>
+            </div>
+
+            <div className="p-8 bg-white/5 border border-white/10 rounded-2xl">
+              <ul className="space-y-3 text-slate-200">
+                {safeOutcomes.map((item) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <FaRegCheckCircle className="w-5 h-5 text-blue-400" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>

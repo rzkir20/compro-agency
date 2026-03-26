@@ -1,5 +1,3 @@
-import React from "react";
-
 import { FiCalendar, FiChevronRight } from "react-icons/fi";
 
 type ServicesDetailsHeroProps = {
@@ -49,7 +47,10 @@ export default function ServicesDetailsHero({
             </a>
 
             <div className="flex items-center gap-2 text-sm text-slate-400">
-              <FiCalendar className="w-5 h-5 text-blue-400" aria-hidden="true" />
+              <FiCalendar
+                className="w-5 h-5 text-blue-400"
+                aria-hidden="true"
+              />
               <span>
                 {selectedPackage.priceMain}
                 <span className="text-slate-400">
@@ -63,4 +64,3 @@ export default function ServicesDetailsHero({
     </section>
   );
 }
-

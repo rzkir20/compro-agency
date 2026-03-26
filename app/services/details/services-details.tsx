@@ -8,19 +8,17 @@ import { IoSparkles } from "react-icons/io5";
 
 import { useParams } from "react-router";
 
-import data from "../../lib/data.json";
+import data from "../../../lib/data.json";
 
 import ServicesDetailsHero from "./services-details-hero";
+
 import ServicesDetailsPriceListDetails from "./services-details-price-list-details";
+
 import ServicesDetailsServiceDetails from "./services-details-service-details";
 
 type ServicesDetailsParams = { id?: string };
 
-export default function ServicesDetails({
-  packageId,
-}: {
-  packageId?: string;
-}) {
+export default function ServicesDetails({ packageId }: { packageId?: string }) {
   const params = useParams();
   const id = packageId ?? (params as ServicesDetailsParams).id;
 
@@ -64,7 +62,9 @@ export default function ServicesDetails({
             <div className="lg:col-span-2 space-y-12">
               <ServicesDetailsServiceDetails overview={overview} />
 
-              <ServicesDetailsPriceListDetails selectedPackage={selectedPackage} />
+              <ServicesDetailsPriceListDetails
+                selectedPackage={selectedPackage}
+              />
             </div>
 
             <aside className="space-y-8">
@@ -135,9 +135,9 @@ export default function ServicesDetails({
                 </div>
 
                 <p className="text-sm text-slate-600 italic">
-                  "We don't just look at the numbers; we look at the culture
-                  and the capability to ensure every strategy we build can
-                  actually cross the finish line."
+                  "We don't just look at the numbers; we look at the culture and
+                  the capability to ensure every strategy we build can actually
+                  cross the finish line."
                 </p>
 
                 <a
@@ -188,4 +188,3 @@ export default function ServicesDetails({
     </main>
   );
 }
-

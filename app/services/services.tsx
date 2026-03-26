@@ -1,14 +1,10 @@
 import React from "react";
 
-import {
-  FaArrowRight,
-  FaBriefcase,
-  FaGlobe,
-  FaRegCheckCircle,
-} from "react-icons/fa";
+import { motion } from "motion/react";
+
+import { FaBriefcase, FaGlobe, FaRegCheckCircle } from "react-icons/fa";
 
 import {
-  FiCalendar,
   FiChevronRight,
   FiClock,
   FiMonitor,
@@ -37,6 +33,34 @@ const servicesIcons: Record<
 };
 
 export default function services() {
+  const heroContainer = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
+  } as const;
+
+  const heroItem = {
+    hidden: { opacity: 0, y: 14 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  } as const;
+
+  const gridContainer = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.08, delayChildren: 0.04 } },
+  } as const;
+
+  const gridItem = {
+    hidden: { opacity: 0, y: 14 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  } as const;
+
   return (
     <main
       style={{ viewTransitionName: "main-content" } as React.CSSProperties}
@@ -47,8 +71,16 @@ export default function services() {
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500 rounded-full blur-[120px] -mr-48 -mt-48" />
         </div>
 
-        <div className="max-w-full-sm xl:container mx-auto px-6 relative z-10 text-white">
-          <nav className="flex items-center gap-2 text-sm text-slate-400 mb-8">
+        <motion.div
+          className="max-w-full-sm xl:container mx-auto px-6 relative z-10 text-white"
+          variants={heroContainer}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.nav
+            variants={heroItem}
+            className="flex items-center gap-2 text-sm text-slate-400 mb-8"
+          >
             <a href="/" className="hover:text-white" id="breadcrumb-home">
               Home
             </a>
@@ -60,20 +92,32 @@ export default function services() {
             >
               Services
             </a>
-          </nav>
+          </motion.nav>
 
           <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-blue-400 text-xs font-bold uppercase tracking-widest w-fit">
+            <motion.div
+              variants={heroItem}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-blue-400 text-xs font-bold uppercase tracking-widest w-fit"
+            >
               {homePageData.services.badge}
-            </div>
-            <h1 className="text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+            </motion.div>
+            <motion.h1
+              variants={heroItem}
+              className="text-5xl lg:text-6xl font-bold leading-tight tracking-tight"
+            >
               {homePageData.services.title}
-            </h1>
-            <p className="text-xl text-slate-300 leading-relaxed">
+            </motion.h1>
+            <motion.p
+              variants={heroItem}
+              className="text-xl text-slate-300 leading-relaxed"
+            >
               {homePageData.services.description}
-            </p>
+            </motion.p>
 
-            <div className="flex items-center gap-6 pt-4 flex-wrap">
+            <motion.div
+              variants={heroItem}
+              className="flex items-center gap-6 pt-4 flex-wrap"
+            >
               <a
                 href="/#contact"
                 id="hero-book-btn"
@@ -86,32 +130,54 @@ export default function services() {
                 <FiClock className="w-5 h-5 text-blue-400" aria-hidden="true" />
                 <span>Explore all service offerings</span>
               </div>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       <section className="py-20 bg-white border-t border-slate-100">
-        <div className="max-w-full-sm xl:container mx-auto px-6 text-center mb-16">
-          <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">
+        <motion.div
+          className="max-w-full-sm xl:container mx-auto px-6 text-center mb-16"
+          variants={heroContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.35 }}
+        >
+          <motion.span
+            variants={heroItem}
+            className="text-blue-600 font-bold uppercase tracking-widest text-sm"
+          >
             {homePageData.services.badge}
-          </span>
-          <h2 className="text-4xl font-bold text-slate-900 mt-2 tracking-tight">
+          </motion.span>
+          <motion.h2
+            variants={heroItem}
+            className="text-4xl font-bold text-slate-900 mt-2 tracking-tight"
+          >
             {homePageData.services.title}
-          </h2>
-          <p className="text-slate-500 max-w-2xl mx-auto mt-4">
+          </motion.h2>
+          <motion.p
+            variants={heroItem}
+            className="text-slate-500 max-w-2xl mx-auto mt-4"
+          >
             {homePageData.services.description}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="max-w-full-sm xl:container mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          className="max-w-full-sm xl:container mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={gridContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {homePageData.services.items.map((service) => {
             const Icon = servicesIcons[service.icon];
             const slug = slugifyServiceTitle(service.title);
 
             return (
-              <a
+              <motion.a
                 key={service.title}
+                variants={gridItem}
                 href={`/services/${slug}`}
                 className="p-8 bg-slate-50 border border-slate-100 rounded-2xl card-hover group"
               >
@@ -130,10 +196,10 @@ export default function services() {
                     </li>
                   ))}
                 </ul>
-              </a>
+              </motion.a>
             );
           })}
-        </div>
+        </motion.div>
       </section>
     </main>
   );

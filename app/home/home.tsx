@@ -1,5 +1,7 @@
 import React from "react";
 
+import { motion } from "motion/react";
+
 import {
   FaArrowRight,
   FaLinkedin,
@@ -68,6 +70,54 @@ const servicesIcons: Record<
 
 export default function Home() {
   const navigate = useNavigate();
+  const portfolioScrollRef = React.useRef<HTMLDivElement | null>(null);
+
+  const scrollPortfolio = (direction: "prev" | "next") => {
+    const el = portfolioScrollRef.current;
+    if (!el) return;
+
+    const firstCard = el.querySelector<HTMLElement>("a, [role='link'], div");
+    const cardWidth = firstCard?.offsetWidth ?? 360;
+
+    const styles = window.getComputedStyle(el);
+    const gap = Number.parseFloat(styles.columnGap || styles.gap || "0") || 0;
+
+    const step = cardWidth + gap;
+    const left = direction === "next" ? step : -step;
+    el.scrollBy({ left, behavior: "smooth" });
+  };
+
+  const heroContainer = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.08, delayChildren: 0.05 },
+    },
+  } as const;
+
+  const heroItem = {
+    hidden: { opacity: 0, y: 14 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  } as const;
+
+  const gridContainer = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.08, delayChildren: 0.05 },
+    },
+  } as const;
+
+  const gridItem = {
+    hidden: { opacity: 0, y: 14 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  } as const;
 
   return (
     <main
@@ -84,21 +134,39 @@ export default function Home() {
         </div>
 
         <div className="max-w-full-sm xl:container mx-auto px-4 sm:px-6 w-full grid lg:grid-cols-2 gap-10 lg:gap-12 items-center relative z-10">
-          <div className="text-white space-y-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-blue-400 text-xs font-bold uppercase tracking-widest">
+          <motion.div
+            className="text-white space-y-8"
+            variants={heroContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.35 }}
+          >
+            <motion.div
+              variants={heroItem}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-blue-400 text-xs font-bold uppercase tracking-widest"
+            >
               <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
               {homePageData.home.badge}
-            </div>
+            </motion.div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
+            <motion.h1
+              variants={heroItem}
+              className="text-3xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight"
+            >
               {homePageData.home.title}
-            </h1>
+            </motion.h1>
 
-            <p className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-lg leading-relaxed">
+            <motion.p
+              variants={heroItem}
+              className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-lg leading-relaxed"
+            >
               {homePageData.home.description}
-            </p>
+            </motion.p>
 
-            <div className="flex flex-wrap gap-3 sm:gap-4">
+            <motion.div
+              variants={heroItem}
+              className="flex flex-wrap gap-3 sm:gap-4"
+            >
               <a
                 href={homePageData.home.primaryCta.href}
                 id="hero-primary-cta"
@@ -114,9 +182,12 @@ export default function Home() {
               >
                 {homePageData.home.secondaryCta.label}
               </a>
-            </div>
+            </motion.div>
 
-            <div className="pt-8 flex items-center justify-between sm:justify-start gap-4 sm:gap-8 border-t border-white/10 w-full sm:w-fit">
+            <motion.div
+              variants={heroItem}
+              className="pt-8 flex items-center justify-between sm:justify-start gap-4 sm:gap-8 border-t border-white/10 w-full sm:w-fit"
+            >
               {homePageData.home.stats.map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="text-2xl font-bold">{stat.value}</div>
@@ -125,10 +196,16 @@ export default function Home() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="hidden lg:block relative">
+          <motion.div
+            className="hidden lg:block relative"
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.08 }}
+          >
             <div className="aspect-square w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl transform rotate-3">
               <img
                 src={homePageData.home.heroImage.src}
@@ -153,7 +230,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -163,19 +240,37 @@ export default function Home() {
       >
         <div className="max-w-full-sm xl:container mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div className="space-y-6">
+            <motion.div
+              className="space-y-6"
+              variants={heroContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.35 }}
+            >
               <div>
-                <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">
+                <motion.span
+                  variants={heroItem}
+                  className="text-blue-600 font-bold uppercase tracking-widest text-sm"
+                >
                   {homePageData.about.badge}
-                </span>
-                <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 tracking-tight">
+                </motion.span>
+                <motion.h2
+                  variants={heroItem}
+                  className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 tracking-tight"
+                >
                   {homePageData.about.title}
-                </h2>
+                </motion.h2>
               </div>
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+              <motion.p
+                variants={heroItem}
+                className="text-base sm:text-lg text-slate-600 leading-relaxed"
+              >
                 {homePageData.about.description}
-              </p>
-              <div className="grid sm:grid-cols-2 gap-6">
+              </motion.p>
+              <motion.div
+                variants={heroItem}
+                className="grid sm:grid-cols-2 gap-6"
+              >
                 {homePageData.about.highlights.map((highlight) => {
                   const Icon = aboutHighlightIcons[highlight.icon];
 
@@ -195,19 +290,28 @@ export default function Home() {
                     </div>
                   );
                 })}
-              </div>
+              </motion.div>
 
-              <div className="p-6 bg-white border border-slate-200 rounded-xl flex items-center gap-6 shadow-sm">
+              <motion.div
+                variants={heroItem}
+                className="p-6 bg-white border border-slate-200 rounded-xl flex items-center gap-6 shadow-sm"
+              >
                 <div className="text-4xl font-black text-blue-600">
                   {homePageData.about.retention.value}
                 </div>
                 <div className="text-slate-600">
                   {homePageData.about.retention.description}
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <div className="relative">
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.35 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.06 }}
+            >
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   {homePageData.about.images.slice(0, 2).map((image) => (
@@ -231,54 +335,76 @@ export default function Home() {
                 </div>
               </div>
               <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-50/50 rounded-full blur-3xl" />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       <section id="services" className="py-10 sm:py-20 bg-white">
-        <div className="max-w-full-sm xl:container mx-auto px-4 sm:px-6 text-center mb-12 sm:mb-16">
-          <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">
+        <motion.div
+          className="max-w-full-sm xl:container mx-auto px-4 sm:px-6 text-center mb-12 sm:mb-16"
+          variants={heroContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.35 }}
+        >
+          <motion.span
+            variants={heroItem}
+            className="text-blue-600 font-bold uppercase tracking-widest text-sm"
+          >
             {homePageData.services.badge}
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 tracking-tight">
+          </motion.span>
+          <motion.h2
+            variants={heroItem}
+            className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 tracking-tight"
+          >
             {homePageData.services.title}
-          </h2>
-          <p className="text-slate-500 max-w-2xl mx-auto mt-4">
+          </motion.h2>
+          <motion.p
+            variants={heroItem}
+            className="text-slate-500 max-w-2xl mx-auto mt-4"
+          >
             {homePageData.services.description}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="max-w-full-sm xl:container mx-auto px-4 sm:px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <motion.div
+          className="max-w-full-sm xl:container mx-auto px-4 sm:px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+          variants={gridContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {homePageData.services.items.map((service) => {
             const Icon = servicesIcons[service.icon];
             const slug = slugifyServiceTitle(service.title);
 
             return (
-              <Link
-                key={service.title}
-                to={`/services/${slug}`}
-                className="p-8 bg-slate-50 border border-slate-100 rounded-2xl card-hover group"
-              >
-                <div className="w-14 h-14 bg-white shadow-sm rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                  <Icon className="w-7 h-7" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-slate-600">{service.description}</p>
-                <ul className="mt-6 space-y-3 text-sm text-slate-500">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2">
-                      <FaRegCheckCircle className="w-4 h-4 text-blue-500" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </Link>
+              <motion.div key={service.title} variants={gridItem}>
+                <Link
+                  to={`/services/${slug}`}
+                  className="p-8 bg-slate-50 border border-slate-100 rounded-2xl card-hover group block"
+                >
+                  <div className="w-14 h-14 bg-white shadow-sm rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                    <Icon className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-4">
+                    {service.title}
+                  </h3>
+                  <p className="text-slate-600">{service.description}</p>
+                  <ul className="mt-6 space-y-3 text-sm text-slate-500">
+                    {service.features.map((feature) => (
+                      <li key={feature} className="flex items-center gap-2">
+                        <FaRegCheckCircle className="w-4 h-4 text-blue-500" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </Link>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </section>
 
       <section
@@ -286,22 +412,42 @@ export default function Home() {
         className="py-10 sm:py-20 bg-slate-900 text-white"
       >
         <div className="max-w-full-sm xl:container mx-auto px-4 sm:px-6 flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-8">
-          <div className="max-w-xl">
-            <span className="text-blue-400 font-bold uppercase tracking-widest text-sm">
+          <motion.div
+            className="max-w-xl"
+            variants={heroContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.35 }}
+          >
+            <motion.span
+              variants={heroItem}
+              className="text-blue-400 font-bold uppercase tracking-widest text-sm"
+            >
               {homePageData.portfolio.badge}
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold mt-2 tracking-tight">
+            </motion.span>
+            <motion.h2
+              variants={heroItem}
+              className="text-3xl sm:text-4xl font-bold mt-2 tracking-tight"
+            >
               {homePageData.portfolio.title}
-            </h2>
-            <p className="text-slate-400 mt-4">
+            </motion.h2>
+            <motion.p variants={heroItem} className="text-slate-400 mt-4">
               {homePageData.portfolio.description}
-            </p>
-          </div>
-          <div className="flex gap-4">
+            </motion.p>
+          </motion.div>
+          <motion.div
+            className="flex gap-4"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.55, ease: "easeOut", delay: 0.08 }}
+          >
             <button
               className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-slate-900 transition-all"
               type="button"
               aria-label="Previous"
+              aria-controls="portfolio-carousel"
+              onClick={() => scrollPortfolio("prev")}
             >
               <FaChevronLeft className="w-4 h-4" />
             </button>
@@ -309,71 +455,110 @@ export default function Home() {
               className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-all"
               type="button"
               aria-label="Next"
+              aria-controls="portfolio-carousel"
+              onClick={() => scrollPortfolio("next")}
             >
               <FaChevronRight className="w-4 h-4" />
             </button>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="max-w-full-sm xl:container mx-auto px-4 sm:px-6 overflow-x-auto pb-8 scrollbar-hide">
-          <div className="flex gap-6 sm:gap-8 w-max">
+        <div
+          id="portfolio-carousel"
+          ref={portfolioScrollRef}
+          className="max-w-full-sm xl:container mx-auto px-4 sm:px-6 overflow-x-auto pb-8 scrollbar-hide"
+        >
+          <motion.div
+            className="flex gap-6 sm:gap-8 w-max"
+            variants={gridContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {CASE_STUDIES.map((c) => (
-              <Link
-                key={c.slug}
-                to={`/portfolio/${c.slug}`}
-                className="w-[280px] sm:w-[360px] lg:w-[400px] group cursor-pointer block"
-              >
-                <div className="aspect-4/5 rounded-3xl overflow-hidden mb-6 relative">
-                  <img
-                    src={c.imageSrc}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    alt={c.imageAlt}
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent" />
-                  <div className="absolute bottom-6 left-6">
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-bold uppercase tracking-wider">
-                        {c.industry}
-                      </span>
-                      <span className="px-3 py-1 bg-blue-600 text-white rounded-full text-[10px] font-bold uppercase tracking-wider">
-                        {c.outcomeLabel}
-                      </span>
+              <motion.div key={c.slug} variants={gridItem}>
+                <Link
+                  to={`/portfolio/${c.slug}`}
+                  className="w-[280px] sm:w-[360px] lg:w-[400px] group cursor-pointer block"
+                >
+                  <div className="aspect-4/5 rounded-3xl overflow-hidden mb-6 relative">
+                    <img
+                      src={c.imageSrc}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      alt={c.imageAlt}
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent" />
+                    <div className="absolute bottom-6 left-6">
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-bold uppercase tracking-wider">
+                          {c.industry}
+                        </span>
+                        <span className="px-3 py-1 bg-blue-600 text-white rounded-full text-[10px] font-bold uppercase tracking-wider">
+                          {c.outcomeLabel}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <h3 className="text-2xl font-bold mb-2">{c.title}</h3>
-                <p className="text-slate-400">{c.description}</p>
-              </Link>
+                  <h3 className="text-2xl font-bold mb-2">{c.title}</h3>
+                  <p className="text-slate-400">{c.description}</p>
+                </Link>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <section id="team" className="py-10 sm:py-20 bg-white">
         <div className="max-w-full-sm xl:container mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-12 sm:mb-16">
-            <div className="max-w-2xl">
-              <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">
-                {homePageData.team.badge}
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 tracking-tight">
-                {homePageData.team.title}
-              </h2>
-            </div>
-            <Link
-              to="/team"
-              id="team-all-link"
-              className="text-blue-600 font-bold flex items-center gap-2 group"
+            <motion.div
+              className="max-w-2xl"
+              variants={heroContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.35 }}
             >
-              {homePageData.team.joinLabel}
-              <FaChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+              <motion.span
+                variants={heroItem}
+                className="text-blue-600 font-bold uppercase tracking-widest text-sm"
+              >
+                {homePageData.team.badge}
+              </motion.span>
+              <motion.h2
+                variants={heroItem}
+                className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 tracking-tight"
+              >
+                {homePageData.team.title}
+              </motion.h2>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.35 }}
+              transition={{ duration: 0.55, ease: "easeOut", delay: 0.08 }}
+            >
+              <Link
+                to="/team"
+                id="team-all-link"
+                className="text-blue-600 font-bold flex items-center gap-2 group"
+              >
+                {homePageData.team.joinLabel}
+                <FaChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div
+            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={gridContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {homePageData.team.members.map((member, index) => (
-              <div
+              <motion.div
                 key={member.name}
+                variants={gridItem}
                 className="group text-center cursor-pointer"
                 role="button"
                 tabIndex={0}
@@ -422,27 +607,40 @@ export default function Home() {
                     <FaTwitter className="w-4 h-4" />
                   </a>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <section className="py-10 sm:py-20 bg-slate-50">
-        <div className="max-w-full-sm xl:container mx-auto px-4 sm:px-6 text-center">
-          <div className="mb-8">
+        <motion.div
+          className="max-w-full-sm xl:container mx-auto px-4 sm:px-6 text-center"
+          variants={heroContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.35 }}
+        >
+          <motion.div variants={heroItem} className="mb-8">
             <FaQuoteLeft className="w-12 h-12 text-blue-200" />
-          </div>
-          <blockquote className="text-xl sm:text-2xl lg:text-3xl font-medium text-slate-900 italic leading-snug mb-10">
+          </motion.div>
+          <motion.blockquote
+            variants={heroItem}
+            className="text-xl sm:text-2xl lg:text-3xl font-medium text-slate-900 italic leading-snug mb-10"
+          >
             "Nexus didn't just give us a report; they stayed with us through the
             execution. Our transformation journey was seamless because of their
             deep industry insights and hands-on approach."
-          </blockquote>
-          <div className="flex flex-col items-center">
-            <img
+          </motion.blockquote>
+          <motion.div variants={heroItem} className="flex flex-col items-center">
+            <motion.img
               src="https://i.pravatar.cc/100?u=client"
               className="w-16 h-16 rounded-full mb-4 ring-4 ring-white shadow-lg"
               alt="Client Portrait"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
             />
             <h5 className="font-bold text-slate-900">Alexandra Dupont</h5>
             <p className="text-slate-500 text-sm">CEO, Global Retail Systems</p>
@@ -452,15 +650,21 @@ export default function Home() {
               <FaBriefcase className="w-7 h-7 sm:w-9 sm:h-9" />
               <FiTrendingUp className="w-7 h-7 sm:w-9 sm:h-9" />
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       <section id="contact" className="py-10 sm:py-20 bg-white">
         <div className="max-w-full-sm xl:container mx-auto px-4 sm:px-6">
           <div className="bg-slate-900 rounded-3xl sm:rounded-[3rem] overflow-hidden flex flex-col lg:flex-row">
-            <div className="lg:w-1/2 p-8 sm:p-12 lg:p-20 text-white space-y-10 sm:space-y-12">
-              <div className="space-y-4">
+            <motion.div
+              className="lg:w-1/2 p-8 sm:p-12 lg:p-20 text-white space-y-10 sm:space-y-12"
+              variants={heroContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <motion.div variants={heroItem} className="space-y-4">
                 <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
                   Ready to Redefine Your Future?
                 </h2>
@@ -468,9 +672,9 @@ export default function Home() {
                   Fill out the form and a senior consultant will reach out to
                   schedule a discovery call within 24 hours.
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="space-y-8">
+              <motion.div variants={heroItem} className="space-y-8">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-blue-400 shrink-0">
                     <FiMail className="w-5 h-5" />
@@ -500,10 +704,16 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <div className="lg:w-1/2 bg-white p-8 sm:p-12 lg:p-20">
+            <motion.div
+              className="lg:w-1/2 bg-white p-8 sm:p-12 lg:p-20"
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.06 }}
+            >
               <form className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
@@ -567,7 +777,7 @@ export default function Home() {
                   <FiSend className="w-5 h-5" />
                 </button>
               </form>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

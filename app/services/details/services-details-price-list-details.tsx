@@ -1,5 +1,3 @@
-import React from "react";
-
 import { FaArrowRight } from "react-icons/fa";
 
 type ServicesDetailsPriceListDetailsProps = {
@@ -10,10 +8,7 @@ export default function ServicesDetailsPriceListDetails({
   selectedPackage,
 }: ServicesDetailsPriceListDetailsProps) {
   return (
-    <div
-      id="price-list-details"
-      className="scroll-mt-24 space-y-6 pt-2"
-    >
+    <div id="price-list-details" className="scroll-mt-24 space-y-6 pt-2">
       <h2 className="text-3xl font-bold text-slate-900">Price List Details</h2>
 
       <div className="p-10 bg-slate-50 border border-slate-100 rounded-3xl">
@@ -72,4 +67,3 @@ export default function ServicesDetailsPriceListDetails({
     </div>
   );
 }
-

@@ -21,6 +21,12 @@ type HomeService = {
   features: string[];
 };
 
+type ServiceDetailsProcessStep = {
+  step: string;
+  title: string;
+  description: string;
+};
+
 type HomePageData = {
   homePage: {
     home: {
@@ -67,6 +73,13 @@ type HomePageData = {
       badge: string;
       title: string;
       description: string;
+      detailsDefaults: {
+        description: string;
+        features: string[];
+        deliverables: string[];
+        process: ServiceDetailsProcessStep[];
+        outcomes: string[];
+      };
       items: HomeService[];
     };
     portfolio: {

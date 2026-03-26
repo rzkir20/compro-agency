@@ -21,146 +21,6 @@ function getTeamMemberSlug(name: string): string | undefined {
   );
 }
 
-function makeFallbackDetails(caseStudy: CaseStudy): CaseStudyDetails {
-  return {
-    breadcrumbLabel: caseStudy.title,
-    categoryLabel: `${caseStudy.industry} Transformation`,
-    pageTitle: caseStudy.title,
-    engagementBadges: [
-      { text: "14 Months Engagement" },
-      { text: "Global European Bank" },
-      { text: "FastCompany Design Award 2023" },
-    ],
-    challenge: {
-      title: "Legacy Barriers to Growth",
-      description:
-        "Our client faced legacy constraints that slowed delivery, increased operational overhead, and reduced the user experience. We identified the highest-impact friction points and rebuilt the journey end-to-end.",
-      bullets: [
-        "Declining NPS scores among priority customer segments.",
-        "High operational costs due to legacy, branch-heavy processing.",
-        "Technical debt preventing rapid iteration and deployment.",
-      ],
-    },
-    solution: {
-      title: "A Radical UX Pivot",
-      description:
-        "Nexus implemented a design-led transformation framework that bypassed traditional bottlenecks and rebuilt the core experience from the user's perspective.",
-      features: [
-        {
-          title: "Instant KYC",
-          description:
-            "Automated workflows reduced onboarding friction dramatically.",
-        },
-        {
-          title: "Predictive Spend",
-          description:
-            "AI-driven insights to help users save more effectively.",
-        },
-      ],
-    },
-    metrics: [
-      { value: "+35%", label: "Digital Adoption" },
-      { value: "-85%", label: "Onboarding Time" },
-      { value: "$42M", label: "Annual Ops Savings" },
-      { value: "4.8 Star", label: "App Store Rating" },
-    ],
-    timeline: [
-      {
-        step: "01",
-        title: "Discovery & Audit",
-        description:
-          "Week 1-4: Stakeholder interviews and tech stack evaluation.",
-      },
-      {
-        step: "02",
-        title: "Prototype & Design",
-        description:
-          "Week 5-12: High-fidelity prototypes and user testing cycles.",
-      },
-      {
-        step: "03",
-        title: "Core Engineering",
-        description:
-          "Week 13-40: Agile development of the microservices layer.",
-      },
-      {
-        step: "04",
-        title: "Pilot & Global Scale",
-        description: "Week 41-60: Staged rollout to scale across markets.",
-      },
-    ],
-    teamInvolved: [
-      {
-        name: "Dr. Elena Vance",
-        role: "Lead Strategic Partner",
-        imageSrc: "https://i.pravatar.cc/150?u=a1",
-        imageAlt: "Elena Vance",
-        href: "#",
-      },
-      {
-        name: "Marcus Thorne",
-        role: "UX/Product Director",
-        imageSrc: "https://i.pravatar.cc/150?u=a2",
-        imageAlt: "Marcus Thorne",
-        href: "#",
-      },
-      {
-        name: "Julian Voss",
-        role: "Systems Architect",
-        imageSrc: "https://i.pravatar.cc/150?u=a6",
-        imageAlt: "Julian Voss",
-        href: "#",
-      },
-      {
-        name: "Sofia Martinez",
-        role: "Data Scientist",
-        imageSrc: "https://i.pravatar.cc/150?u=a7",
-        imageAlt: "Sofia Martinez",
-        href: "#",
-      },
-    ],
-    testimonial: {
-      quote:
-        "Nexus didn't just design a new app; they transformed our internal culture to be digital-first.",
-      name: "Jean-Pierre Rossi",
-      role: "Chief Digital Officer, European Global Bank",
-    },
-    gallery: [
-      {
-        label: "Legacy Platform (2021)",
-        imageSrc:
-          "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200",
-        imageAlt: "Legacy Banking",
-      },
-      {
-        label: "Nexus Experience (2023)",
-        imageSrc:
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
-        imageAlt: "Modern Banking UX",
-      },
-    ],
-    keyLearnings: [
-      {
-        title: "Trust is Mobile-First",
-        description:
-          "Modern banking trust isn't built in marble branches; it's built in the reliability and speed of the mobile app interface.",
-      },
-      {
-        title: "Data as a Service",
-        description:
-          "Users don't want spreadsheets; they want actionable intelligence on their spending patterns delivered in real-time.",
-      },
-    ],
-    bottomCta: {
-      title: "Start Your Transformation Today",
-      description:
-        "Whether it's UX overhaul or a total strategic pivot, our team is ready to deliver measurable growth for your organization.",
-      buttonLabel: "Book a Deep-Dive",
-      href: "/#contact",
-    },
-  };
-}
-
 export default function CaseStudyDetailsPage() {
   const params = useParams();
   const slug =
@@ -172,7 +32,10 @@ export default function CaseStudyDetailsPage() {
     throw new Response("Case study not found", { status: 404 });
   }
 
-  const details = caseStudy.details ?? makeFallbackDetails(caseStudy);
+  const details = caseStudy.details;
+  if (!details) {
+    throw new Response("Case study details not found", { status: 500 });
+  }
   const related = CASE_STUDIES.filter((c) => c.slug !== caseStudy.slug).slice(
     0,
     2,
@@ -341,7 +204,7 @@ export default function CaseStudyDetailsPage() {
               </p>
             </div>
             <a
-              href="#team"
+              href="/team"
               className="text-blue-600 font-bold flex items-center gap-2 group mt-4 md:mt-0"
             >
               View Full Team{" "}
@@ -366,19 +229,11 @@ export default function CaseStudyDetailsPage() {
               );
 
               return slug ? (
-                <Link
-                  key={m.name}
-                  to={`/team/${slug}`}
-                  className="block group"
-                >
+                <Link key={m.name} to={`/team/${slug}`} className="block group">
                   {card}
                 </Link>
               ) : (
-                <a
-                  key={m.name}
-                  href={m.href ?? "#"}
-                  className="block group"
-                >
+                <a key={m.name} href={m.href ?? "#"} className="block group">
                   {card}
                 </a>
               );

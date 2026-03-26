@@ -1,5 +1,7 @@
 import React from "react";
 
+import { motion } from "motion/react";
+
 import {
   FaArrowRight,
   FaBrain,
@@ -34,6 +36,34 @@ const benefitIcons: Record<
 };
 
 export default function WorkWithUs() {
+  const heroContainer = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
+  } as const;
+
+  const heroItem = {
+    hidden: { opacity: 0, y: 14 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  } as const;
+
+  const gridContainer = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.08, delayChildren: 0.04 } },
+  } as const;
+
+  const gridItem = {
+    hidden: { opacity: 0, y: 14 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  } as const;
+
   return (
     <main style={{ viewTransitionName: "main-content" } as React.CSSProperties}>
       <section className="pt-28 md:pt-36 hero-gradient relative overflow-hidden py-16 md:py-24">
@@ -41,20 +71,37 @@ export default function WorkWithUs() {
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500 rounded-full blur-[120px] -mr-48 -mt-48" />
         </div>
 
-        <div className="max-w-full-sm xl:container mx-auto px-4 sm:px-6 relative z-10 text-white text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
+        <motion.div
+          className="max-w-full-sm xl:container mx-auto px-4 sm:px-6 relative z-10 text-white text-center"
+          variants={heroContainer}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.div
+            variants={heroItem}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6"
+          >
             <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
             Careers at Nexus
-          </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-7xl font-bold tracking-tight mb-6 sm:mb-8 leading-tight">
+          </motion.div>
+          <motion.h1
+            variants={heroItem}
+            className="text-3xl sm:text-4xl lg:text-7xl font-bold tracking-tight mb-6 sm:mb-8 leading-tight"
+          >
             Shape the Future <br />
             of Global Business.
-          </h1>
-          <p className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10">
+          </motion.h1>
+          <motion.p
+            variants={heroItem}
+            className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10"
+          >
             Join a collective of world-class experts dedicated to solving the
             most complex challenges of the modern economy.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+          </motion.p>
+          <motion.div
+            variants={heroItem}
+            className="flex flex-wrap justify-center gap-3 sm:gap-4"
+          >
             <a
               href="#open-positions"
               id="cta-scroll-jobs"
@@ -69,30 +116,45 @@ export default function WorkWithUs() {
             >
               Our Culture
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       <section id="culture" className="py-10 xl:py-20 bg-white">
         <div className="max-w-full-sm xl:container mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
-            <div className="space-y-8">
+            <motion.div
+              className="space-y-8"
+              variants={heroContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.35 }}
+            >
               <div className="space-y-4">
-                <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">
+                <motion.span
+                  variants={heroItem}
+                  className="text-blue-600 font-bold uppercase tracking-widest text-sm"
+                >
                   The Nexus Way
-                </span>
-                <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+                </motion.span>
+                <motion.h2
+                  variants={heroItem}
+                  className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight"
+                >
                   Built on Intelligence, Driven by Impact.
-                </h2>
+                </motion.h2>
               </div>
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+              <motion.p
+                variants={heroItem}
+                className="text-base sm:text-lg text-slate-600 leading-relaxed"
+              >
                 At Nexus, we do not just provide consulting; we architect
                 transformation. Our culture is defined by intellectual
                 curiosity, radical transparency, and a relentless commitment to
                 our clients&apos; success. We hire leaders who think differently
                 and act with purpose.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-6">
+              </motion.p>
+              <motion.div variants={heroItem} className="grid sm:grid-cols-2 gap-6">
                 <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
                   <div className="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-4">
                     <FaBrain className="w-5 h-5" />
@@ -117,10 +179,16 @@ export default function WorkWithUs() {
                     partnership in every engagement.
                   </p>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <div className="relative">
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.06 }}
+            >
               <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl">
                 <img
                   src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=1200"
@@ -134,30 +202,52 @@ export default function WorkWithUs() {
                   Employee satisfaction rating across our global offices.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       <section id="open-positions" className="py-10 xl:py-20 bg-slate-50">
         <div className="max-w-full-sm xl:container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-16">
-            <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">
+          <motion.div
+            className="text-center mb-16"
+            variants={heroContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.35 }}
+          >
+            <motion.span
+              variants={heroItem}
+              className="text-blue-600 font-bold uppercase tracking-widest text-sm"
+            >
               Opportunities
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 tracking-tight">
+            </motion.span>
+            <motion.h2
+              variants={heroItem}
+              className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 tracking-tight"
+            >
               Current Openings
-            </h2>
-            <p className="text-slate-500 mt-4 max-w-2xl mx-auto">
+            </motion.h2>
+            <motion.p
+              variants={heroItem}
+              className="text-slate-500 mt-4 max-w-2xl mx-auto"
+            >
               We are always looking for exceptional talent to join our
               specialized practice groups.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <div className="space-y-6">
+          <motion.div
+            className="space-y-6"
+            variants={gridContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
+          >
             {openings.map((opening) => (
-              <div
+              <motion.div
                 key={opening.id}
+                variants={gridItem}
                 className="bg-white p-5 sm:p-8 rounded-3xl border border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-6 sm:gap-8 card-hover shadow-sm"
               >
                 <div className="space-y-3">
@@ -185,11 +275,17 @@ export default function WorkWithUs() {
                 >
                   Apply Now
                 </a>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="mt-12 text-center">
+          <motion.div
+            className="mt-12 text-center"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.55, ease: "easeOut" }}
+          >
             <p className="text-slate-500">
               Don&apos;t see a role that fits?{" "}
               <a
@@ -200,17 +296,26 @@ export default function WorkWithUs() {
                 Send us a general application
               </a>
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <section className="py-10 xl:py-20 bg-white">
         <div className="max-w-full-sm xl:container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 md:gap-14 lg:gap-20">
-          <div className="space-y-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          <motion.div
+            className="space-y-12"
+            variants={heroContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.35 }}
+          >
+            <motion.h2
+              variants={heroItem}
+              className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight"
+            >
               Your Journey to Joining Vertexa
-            </h2>
-            <div className="space-y-8 sm:space-y-10">
+            </motion.h2>
+            <motion.div variants={heroItem} className="space-y-8 sm:space-y-10">
               {journey.map((item, index) => {
                 const isFirst = index === 0;
                 const isLast = index === journey.length - 1;
@@ -239,12 +344,18 @@ export default function WorkWithUs() {
                   </div>
                 );
               })}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="bg-slate-900 rounded-4xl sm:rounded-[3rem] p-6 sm:p-10 lg:p-16 text-white h-fit">
+          <motion.div
+            className="bg-slate-900 rounded-4xl sm:rounded-[3rem] p-6 sm:p-10 lg:p-16 text-white h-fit"
+            variants={heroContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <h3 className="text-2xl font-bold mb-8">Global Benefits</h3>
-            <div className="grid gap-8">
+            <motion.div variants={heroItem} className="grid gap-8">
               {benefits.map((benefit) => {
                 const Icon = benefitIcons[benefit.icon];
 
@@ -262,46 +373,71 @@ export default function WorkWithUs() {
                   </div>
                 );
               })}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       <section className="py-10 xl:py-20 bg-slate-50">
-        <div className="max-w-full-sm xl:container mx-auto px-4 sm:px-6 text-center">
-          <div className="mb-12">
+        <motion.div
+          className="max-w-full-sm xl:container mx-auto px-4 sm:px-6 text-center"
+          variants={heroContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.35 }}
+        >
+          <motion.div variants={heroItem} className="mb-12">
             <FaQuoteLeft className="text-5xl text-blue-200 mx-auto" />
-          </div>
-          <blockquote className="text-xl sm:text-2xl lg:text-3xl font-medium text-slate-900 italic leading-snug mb-10 max-w-4xl mx-auto">
+          </motion.div>
+          <motion.blockquote
+            variants={heroItem}
+            className="text-xl sm:text-2xl lg:text-3xl font-medium text-slate-900 italic leading-snug mb-10 max-w-4xl mx-auto"
+          >
             &quot;Nexus provided me with the platform to work on projects that
             actually move the needle for global industries. The level of
             autonomy and support from the leadership is unparalleled in the
             consulting world.&quot;
-          </blockquote>
-          <div className="flex flex-col items-center">
-            <img
+          </motion.blockquote>
+          <motion.div variants={heroItem} className="flex flex-col items-center">
+            <motion.img
               src="https://i.pravatar.cc/150?u=emp1"
               className="w-20 h-20 rounded-full mb-4 ring-4 ring-white shadow-xl"
               alt="Employee Portrait"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
             />
             <h5 className="font-bold text-slate-900">Julian Pierce</h5>
             <p className="text-slate-500 text-sm uppercase tracking-widest font-bold">
               Senior Strategy Associate
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       <section className="py-10 xl:py-20 bg-white border-t border-slate-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+        <motion.div
+          className="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-8"
+          variants={heroContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.35 }}
+        >
+          <motion.h2
+            variants={heroItem}
+            className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight"
+          >
             Ready to redefine your future?
-          </h2>
-          <p className="text-base sm:text-xl text-slate-500 max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p
+            variants={heroItem}
+            className="text-base sm:text-xl text-slate-500 max-w-2xl mx-auto"
+          >
             Join a team that&apos;s building the next generation of business
             intelligence. We&apos;re excited to meet you.
-          </p>
-          <div className="flex justify-center gap-4 pt-4">
+          </motion.p>
+          <motion.div variants={heroItem} className="flex justify-center gap-4 pt-4">
             <a
               href="mailto:careers@nexus-strategy.com"
               id="footer-career-mail"
@@ -310,8 +446,8 @@ export default function WorkWithUs() {
               Contact Careers Team <FiMail className="w-5 h-5" />
               <FaArrowRight className="w-4 h-4" />
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
     </main>
   );

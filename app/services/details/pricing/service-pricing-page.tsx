@@ -2,23 +2,16 @@ import React from "react";
 
 import { FiCalendar, FiChevronRight } from "react-icons/fi";
 
-import data from "../../lib/data.json";
-import { slugifyServiceTitle } from "../../lib/service-slug";
+import { slugifyServiceTitle } from "../../../../lib/service-slug";
+
+import {
+  getServicesData,
+  requireServiceBySlug,
+} from "../../../../service/services.service";
 
 export default function ServicePricingPage({ slug }: { slug?: string }) {
-  const homePageData = (data as HomePageData).homePage;
-  const servicesData = (data as ServicesData).services;
-
-  const service = slug
-    ? homePageData.services.items.find(
-        (s) => slugifyServiceTitle(s.title) === slug,
-      )
-    : undefined;
-
-  if (!service) {
-    throw new Response("Service not found", { status: 404 });
-  }
-
+  const service = requireServiceBySlug(slug);
+  const servicesData = getServicesData();
   const engagementPackages = servicesData.engagementPackages;
 
   return (

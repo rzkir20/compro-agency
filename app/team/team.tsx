@@ -1,5 +1,7 @@
 import React from "react";
 
+import { motion } from "motion/react";
+
 import { FaArrowRight, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 import { useNavigate } from "react-router";
@@ -14,6 +16,34 @@ const SPECIALISTS = teamData.specialists;
 
 export default function Team() {
   const navigate = useNavigate();
+
+  const heroContainer = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
+  } as const;
+
+  const heroItem = {
+    hidden: { opacity: 0, y: 14 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  } as const;
+
+  const gridContainer = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.08, delayChildren: 0.04 } },
+  } as const;
+
+  const gridItem = {
+    hidden: { opacity: 0, y: 14 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  } as const;
 
   const goToMember = (slug?: string) => {
     if (!slug) return;
@@ -33,34 +63,62 @@ export default function Team() {
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500 rounded-full blur-[120px] -mr-48 -mt-48" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-          <span className="text-blue-400 font-bold uppercase tracking-widest text-sm mb-4 block">
+        <motion.div
+          className="max-w-7xl mx-auto px-6 relative z-10 text-center"
+          variants={heroContainer}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.span
+            variants={heroItem}
+            className="text-blue-400 font-bold uppercase tracking-widest text-sm mb-4 block"
+          >
             Our People
-          </span>
-          <h1 className="text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight">
+          </motion.span>
+          <motion.h1
+            variants={heroItem}
+            className="text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight"
+          >
             The Minds Shaping Tomorrow&apos;s Strategies.
-          </h1>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          </motion.h1>
+          <motion.p
+            variants={heroItem}
+            className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed"
+          >
             Nexus is built on the collective brilliance of industry veterans,
             analytical masters, and visionary leaders. Our diverse expertise is
             your competitive advantage.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
       </section>
 
       <section className="py-10 xl:py-20 bg-white">
         <div className="max-w-full-sm xl:container mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-16 border-b border-slate-100 pb-8">
-            <div>
-              <h2 className="text-3xl font-bold text-slate-900 tracking-tight">
+            <motion.div
+              variants={heroContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.35 }}
+            >
+              <motion.h2
+                variants={heroItem}
+                className="text-3xl font-bold text-slate-900 tracking-tight"
+              >
                 Executive Leadership
-              </h2>
-              <p className="text-slate-500 mt-2">
+              </motion.h2>
+              <motion.p variants={heroItem} className="text-slate-500 mt-2">
                 The core steering committee driving Nexus Strategy globally.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
-            <div className="flex gap-4 p-1 bg-slate-50 rounded-xl">
+            <motion.div
+              className="flex gap-4 p-1 bg-slate-50 rounded-xl"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.35 }}
+              transition={{ duration: 0.55, ease: "easeOut", delay: 0.08 }}
+            >
               <button
                 className="px-6 py-2 rounded-lg text-sm font-bold bg-white text-slate-900 shadow-sm"
                 type="button"
@@ -79,13 +137,20 @@ export default function Team() {
               >
                 Operations
               </button>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-12"
+            variants={gridContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {LEADERS.map((leader, idx) => (
-              <div
+              <motion.div
                 key={leader.name}
+                variants={gridItem}
                 className="group cursor-pointer"
                 role="button"
                 tabIndex={0}
@@ -151,27 +216,43 @@ export default function Team() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <section className="py-10 xl:py-20 bg-slate-50">
         <div className="max-w-full-sm xl:container mx-auto px-6">
-          <div className="mb-16 border-b border-slate-200 pb-8">
-            <h2 className="text-3xl font-bold text-slate-900 tracking-tight">
+          <motion.div
+            className="mb-16 border-b border-slate-200 pb-8"
+            variants={heroContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.35 }}
+          >
+            <motion.h2
+              variants={heroItem}
+              className="text-3xl font-bold text-slate-900 tracking-tight"
+            >
               Senior Consultants &amp; Specialists
-            </h2>
-            <p className="text-slate-500 mt-2">
+            </motion.h2>
+            <motion.p variants={heroItem} className="text-slate-500 mt-2">
               The deep domain experts executing change across industries.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div
+            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={gridContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {SPECIALISTS.map((s) => (
-              <div
+              <motion.div
                 key={s.name}
+                variants={gridItem}
                 className="bg-white p-6 rounded-4xl border border-slate-200 shadow-sm hover:shadow-md transition-all group cursor-pointer"
                 role="button"
                 tabIndex={0}
@@ -199,16 +280,25 @@ export default function Team() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <section className="py-10 xl:py-20 bg-white">
         <div className="max-w-full-sm xl:container mx-auto px-6">
-          <div className="bg-slate-900 rounded-4xl sm:rounded-[2.5rem] lg:rounded-[3rem] p-6 sm:p-8 lg:p-14 xl:p-20 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-            <div className="flex-1 space-y-5 sm:space-y-6 text-white text-center lg:text-left w-full">
+          <motion.div
+            className="bg-slate-900 rounded-4xl sm:rounded-[2.5rem] lg:rounded-[3rem] p-6 sm:p-8 lg:p-14 xl:p-20 flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
+            variants={heroContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
+          >
+            <motion.div
+              variants={heroItem}
+              className="flex-1 space-y-5 sm:space-y-6 text-white text-center lg:text-left w-full"
+            >
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
                 Want to work with our experts?
               </h2>
@@ -235,9 +325,12 @@ export default function Team() {
                   Join Our Global Network
                 </a>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="flex-1 w-full max-w-md lg:max-w-none grid grid-cols-2 gap-3 sm:gap-4">
+            <motion.div
+              variants={heroItem}
+              className="flex-1 w-full max-w-md lg:max-w-none grid grid-cols-2 gap-3 sm:gap-4"
+            >
               <div className="space-y-4">
                 <div className="p-4 sm:p-6 bg-white/5 rounded-2xl border border-white/10 text-center">
                   <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
@@ -275,8 +368,8 @@ export default function Team() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </main>

@@ -4,7 +4,7 @@ import type { Route } from "./+types/home";
 
 import { useParams } from "react-router";
 
-import ServiceSchedulePage from "../services/service-schedule-page";
+import ServiceSchedulePage from "../services/details/pricing/schedule/service-schedule-page";
 
 import { slugifyServiceTitle } from "../../lib/service-slug";
 

@@ -1,12 +1,13 @@
+import React from "react";
+
 import type { Route } from "./+types/home";
 
 import { useParams } from "react-router";
 
-import ServiceDetailsPage from "../services/details/service-details-page";
-
+import data from "../../lib/data.json";
 import { slugifyServiceTitle } from "../../lib/service-slug";
 
-import data from "../../lib/data.json";
+import ServiceBookingConfirmedPage from "../services/details/pricing/schedule/confirmed/service-booking-confirmed-page";
 
 export function meta({ params }: Route.MetaArgs) {
   const slug = (params as { slug?: string } | undefined)?.slug;
@@ -20,23 +21,20 @@ export function meta({ params }: Route.MetaArgs) {
 
   return [
     {
-      title:
-        service && service.title
-          ? `${service.title} | Vertexa Strategy`
-          : "Service Details | Vertexa Strategy",
+      title: "Booking Confirmed | Nexus Strategy",
     },
     {
       name: "description",
       content:
-        service && service.description
-          ? service.description
-          : "Service details and engagement options.",
+        service && service.title
+          ? `Your consultation for ${service.title} is confirmed.`
+          : "Your consultation is confirmed.",
     },
   ];
 }
 
-export default function ServiceDetailsRoute() {
+export default function ServiceBookingConfirmedRoute() {
   const params = useParams();
   const slug = (params as { slug?: string }).slug;
-  return <ServiceDetailsPage slug={slug} />;
+  return <ServiceBookingConfirmedPage slug={slug} />;
 }

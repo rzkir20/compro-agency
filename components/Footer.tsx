@@ -130,15 +130,27 @@ export default function Footer() {
         <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
           <p>© 2026 Space Digitalia. All rights reserved.</p>
           <div className="flex gap-8">
-            <a href="#" id="f-legal-1" className="hover:text-slate-900">
+            <Link
+              to="/privacy-policy"
+              id="f-legal-1"
+              className="hover:text-slate-900"
+            >
               Privacy Policy
-            </a>
-            <a href="#" id="f-legal-2" className="hover:text-slate-900">
+            </Link>
+            <Link
+              to="/terms-of-service"
+              id="f-legal-2"
+              className="hover:text-slate-900"
+            >
               Terms of Service
-            </a>
-            <a href="#" id="f-legal-3" className="hover:text-slate-900">
+            </Link>
+            <Link
+              to="/cookie-policy"
+              id="f-legal-3"
+              className="hover:text-slate-900"
+            >
               Cookie Policy
-            </a>
+            </Link>
           </div>
         </div>
       </div>
