@@ -2012,6 +2012,96 @@
         "description": "Streamline supply chains and optimize global workflows using lean management and performance auditing."
       }
     ],
+    "openingDetails": {
+      "Strategy": {
+        "qualifications": [
+          "Minimal 5 tahun pengalaman di strategy consulting, corporate strategy, atau business transformation.",
+          "Kemampuan problem solving terstruktur dengan pendekatan hypothesis-driven.",
+          "Mahir mengolah data dan menyusun insight bisnis menjadi rekomendasi strategis.",
+          "Komunikasi presentasi yang kuat untuk C-level stakeholder.",
+          "Bahasa Inggris profesional (lisan dan tulisan)."
+        ],
+        "responsibilities": [
+          "Memimpin end-to-end project strategy untuk klien enterprise dan Fortune 500.",
+          "Melakukan market analysis, competitor benchmarking, dan strategic option mapping.",
+          "Menyusun roadmap eksekusi 30/60/90 hari berbasis prioritas bisnis.",
+          "Memfasilitasi workshop alignment lintas fungsi dengan tim klien.",
+          "Membimbing anggota tim junior agar delivery konsisten dan berkualitas."
+        ],
+        "applicationSteps": [
+          "Kirim CV terbaru, portfolio project, dan cover letter singkat.",
+          "Gunakan subject email: Application - Senior Strategic Consultant.",
+          "Cantumkan role code pada email: apply-btn-1.",
+          "Tim rekrutmen akan menghubungi kandidat terpilih maksimal 7 hari kerja."
+        ]
+      },
+      "Digital": {
+        "qualifications": [
+          "Pengalaman 4+ tahun pada digital transformation, cloud, atau AI implementation.",
+          "Memahami arsitektur solusi modern (cloud-native, API, data platform).",
+          "Mampu menghubungkan kebutuhan bisnis dengan rekomendasi teknologi.",
+          "Terbiasa bekerja dalam tim lintas fungsi: product, engineering, dan business.",
+          "Komunikasi stakeholder management yang baik."
+        ],
+        "responsibilities": [
+          "Merancang strategi transformasi digital yang terukur dan realistis.",
+          "Menyusun blueprint implementasi cloud/AI bersama tim teknis klien.",
+          "Mengawal governance delivery agar target timeline dan kualitas tercapai.",
+          "Membuat framework KPI untuk mengukur dampak transformasi.",
+          "Memberikan advisory pada leadership untuk prioritas teknologi."
+        ],
+        "applicationSteps": [
+          "Kirim CV, portfolio transformasi digital, dan ringkasan studi kasus.",
+          "Gunakan subject email: Application - Digital Transformation Advisor.",
+          "Cantumkan role code pada email: apply-btn-2.",
+          "Sertakan link LinkedIn/GitHub/portfolio jika tersedia."
+        ]
+      },
+      "Finance": {
+        "qualifications": [
+          "Minimal 4 tahun pengalaman di financial analysis, transaction advisory, atau corporate finance.",
+          "Mahir financial modeling, valuation, dan sensitivity analysis.",
+          "Memahami prinsip risk management dan due diligence.",
+          "Teliti, analytical, serta mampu menjelaskan angka ke non-finance audience.",
+          "Sertifikasi CFA/FRM menjadi nilai tambah."
+        ],
+        "responsibilities": [
+          "Menganalisis struktur modal dan skenario investasi strategis klien.",
+          "Menyusun model keuangan untuk keputusan ekspansi, M&A, atau restrukturisasi.",
+          "Melakukan due diligence kuantitatif dan menyusun executive summary.",
+          "Membantu tim klien merancang framework financial risk management.",
+          "Menyajikan insight ke stakeholder senior dengan narasi bisnis yang jelas."
+        ],
+        "applicationSteps": [
+          "Kirim CV, contoh financial model/deck (boleh disamarkan), dan cover letter.",
+          "Gunakan subject email: Application - Senior Financial Analyst.",
+          "Cantumkan role code pada email: apply-btn-3.",
+          "Tuliskan ekspektasi salary dan availability start date."
+        ]
+      },
+      "Operations": {
+        "qualifications": [
+          "Pengalaman 4+ tahun di operations excellence, supply chain, atau process improvement.",
+          "Memahami lean management, process mapping, dan performance metrics.",
+          "Terbiasa menangani proyek efisiensi lintas fungsi dan lintas lokasi.",
+          "Mampu menganalisis bottleneck operasional dan merancang solusi implementatif.",
+          "Kemampuan komunikasi dan change management yang baik."
+        ],
+        "responsibilities": [
+          "Memimpin inisiatif perbaikan proses end-to-end pada operasi klien.",
+          "Menyusun KPI operasional dan dashboard monitoring performa.",
+          "Mengoptimalkan workflow supply chain untuk efisiensi biaya dan waktu.",
+          "Mengoordinasikan implementasi solusi bersama tim operasional klien.",
+          "Memonitor impact pasca implementasi dan continuous improvement cycle."
+        ],
+        "applicationSteps": [
+          "Kirim CV, portfolio project operations, dan ringkasan impact yang pernah dicapai.",
+          "Gunakan subject email: Application - Operations Excellence Manager.",
+          "Cantumkan role code pada email: apply-btn-4.",
+          "Kandidat terpilih akan lanjut ke tahap case challenge."
+        ]
+      }
+    },
     "journey": [
       {
         "step": "01",

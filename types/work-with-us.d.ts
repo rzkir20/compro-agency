@@ -21,9 +21,16 @@ type BenefitItem = {
   description: string;
 };
 
+type OpeningDetailContent = {
+  qualifications: string[];
+  responsibilities: string[];
+  applicationSteps: string[];
+};
+
 type WorkWithUsData = {
   workWithUs: {
     openings: JobOpening[];
+    openingDetails: Record<string, OpeningDetailContent>;
     journey: JourneyStep[];
     benefits: BenefitItem[];
   };

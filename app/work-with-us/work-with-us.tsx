@@ -2,6 +2,8 @@ import React from "react";
 
 import { motion } from "motion/react";
 
+import { Link } from "react-router";
+
 import {
   FaArrowRight,
   FaBrain,
@@ -154,7 +156,10 @@ export default function WorkWithUs() {
                 our clients&apos; success. We hire leaders who think differently
                 and act with purpose.
               </motion.p>
-              <motion.div variants={heroItem} className="grid sm:grid-cols-2 gap-6">
+              <motion.div
+                variants={heroItem}
+                className="grid sm:grid-cols-2 gap-6"
+              >
                 <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
                   <div className="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-4">
                     <FaBrain className="w-5 h-5" />
@@ -268,13 +273,13 @@ export default function WorkWithUs() {
                     {opening.description}
                   </p>
                 </div>
-                <a
-                  href="#"
+                <Link
+                  to={`/work-With-us/${opening.id}`}
                   id={opening.id}
                   className="w-full md:w-auto px-8 py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-slate-800 transition-all text-center"
                 >
                   Apply Now
-                </a>
+                </Link>
               </motion.div>
             ))}
           </motion.div>
@@ -398,7 +403,10 @@ export default function WorkWithUs() {
             autonomy and support from the leadership is unparalleled in the
             consulting world.&quot;
           </motion.blockquote>
-          <motion.div variants={heroItem} className="flex flex-col items-center">
+          <motion.div
+            variants={heroItem}
+            className="flex flex-col items-center"
+          >
             <motion.img
               src="https://i.pravatar.cc/150?u=emp1"
               className="w-20 h-20 rounded-full mb-4 ring-4 ring-white shadow-xl"
@@ -437,7 +445,10 @@ export default function WorkWithUs() {
             Join a team that&apos;s building the next generation of business
             intelligence. We&apos;re excited to meet you.
           </motion.p>
-          <motion.div variants={heroItem} className="flex justify-center gap-4 pt-4">
+          <motion.div
+            variants={heroItem}
+            className="flex justify-center gap-4 pt-4"
+          >
             <a
               href="mailto:careers@nexus-strategy.com"
               id="footer-career-mail"
