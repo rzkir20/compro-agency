@@ -9,7 +9,12 @@ import { FiLayers } from "react-icons/fi";
 
 import { Link } from "react-router";
 
+import data from "../lib/data.json";
+import { slugifyServiceTitle } from "../lib/service-slug";
+
 export default function Footer() {
+  const homePageData = (data as HomePageData).homePage;
+
   return (
     <footer className="bg-slate-50 border-t border-slate-200 pt-20 pb-10">
       <div className="max-w-full-sm xl:container mx-auto px-6">
@@ -58,25 +63,23 @@ export default function Footer() {
             <h4 className="font-bold text-slate-900 mb-6">Services</h4>
             <ul className="space-y-4 text-sm text-slate-500">
               <li className="hover:text-blue-600 transition-colors">
-                <a href="#" id="f-serv-1">
-                  Strategic Planning
-                </a>
+                <Link to="/services" id="f-serv-all">
+                  All Services
+                </Link>
               </li>
-              <li className="hover:text-blue-600 transition-colors">
-                <a href="#" id="f-serv-2">
-                  Financial Advisory
-                </a>
-              </li>
-              <li className="hover:text-blue-600 transition-colors">
-                <a href="#" id="f-serv-3">
-                  Digital Transformation
-                </a>
-              </li>
-              <li className="hover:text-blue-600 transition-colors">
-                <a href="#" id="f-serv-4">
-                  Operations Excellence
-                </a>
-              </li>
+              {homePageData.services.items.slice(0, 4).map((service, idx) => {
+                const slug = slugifyServiceTitle(service.title);
+                return (
+                  <li
+                    key={service.title}
+                    className="hover:text-blue-600 transition-colors"
+                  >
+                    <Link to={`/services/${slug}`} id={`f-serv-${idx + 1}`}>
+                      {service.title}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 

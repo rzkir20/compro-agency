@@ -30,6 +30,8 @@ import data from "../../lib/data.json";
 
 import { Link, useNavigate } from "react-router";
 
+import { slugifyServiceTitle } from "../../lib/service-slug";
+
 const homePageData = (data as HomePageData).homePage;
 const CASE_STUDIES = (data as PortfolioData).portfolio.caseStudies;
 const teamData = (data as TeamData).team;
@@ -250,10 +252,12 @@ export default function Home() {
         <div className="max-w-full-sm xl:container mx-auto px-4 sm:px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {homePageData.services.items.map((service) => {
             const Icon = servicesIcons[service.icon];
+            const slug = slugifyServiceTitle(service.title);
 
             return (
-              <div
+              <Link
                 key={service.title}
+                to={`/services/${slug}`}
                 className="p-8 bg-slate-50 border border-slate-100 rounded-2xl card-hover group"
               >
                 <div className="w-14 h-14 bg-white shadow-sm rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
@@ -271,7 +275,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </Link>
             );
           })}
         </div>
