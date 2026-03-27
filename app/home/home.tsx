@@ -478,7 +478,7 @@ export default function Home() {
             {CASE_STUDIES.map((c) => (
               <motion.div key={c.slug} variants={gridItem}>
                 <Link
-                  to={`/portfolio/${c.slug}`}
+                  to={`/portofolio/${c.slug}`}
                   className="w-[280px] sm:w-[360px] lg:w-[400px] group cursor-pointer block"
                 >
                   <div className="aspect-4/5 rounded-3xl overflow-hidden mb-6 relative">

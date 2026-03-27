@@ -62,7 +62,7 @@ export default function CaseStudyDetailsPage() {
             </Link>
             <FiChevronRight className="text-xs" />
             <Link
-              to="/portfolio"
+              to="/portofolio"
               id="breadcrumb-portfolio"
               className="hover:text-blue-400 transition-colors"
             >
@@ -351,7 +351,7 @@ export default function CaseStudyDetailsPage() {
             {related.map((p) => (
               <Link
                 key={p.slug}
-                to={`/portfolio/${p.slug}`}
+                to={`/portofolio/${p.slug}`}
                 className="group block"
               >
                 <div className="aspect-video rounded-3xl overflow-hidden mb-4 relative">
